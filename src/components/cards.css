@@ -1,0 +1,18 @@
+.ds {
+    box-shadow: 
+      0 10px 8px rgb(34, 218, 196), 
+      0 4px 3px rgb(34, 218, 196);
+  }
+  /* This ensures the initial state of the card has opacity set to 0 and is translated down the y-axis */
+.card-initial {
+    opacity: 0;
+    transform: translateY(3rem); 
+    transition: opacity 1.5s ease, transform 1.5s ease;
+  }
+  
+  /* When the card is in view, it will transition to full opacity and translate to its original position */
+  .card-in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
