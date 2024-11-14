@@ -67,8 +67,8 @@ const AiService = () => {
 
   return (
     <>
-      <section id="heading" className="bg-black relative">
-        <div className="bg-[#0E0E1F] min-h-[550px] w-full flex items-center justify-center flex-col text-center relative">
+      <section id="heading" className="bg-bgblue relative">
+        <div className="bg-bgblue min-h-[550px] w-full flex items-center justify-center flex-col text-center relative">
           <img src={Cbg1} alt="Circle1 image" className="absolute right-0 w-[100px] h-[225px] md:w-[200px] md:h-[450px]" />
           <img src={Cbg} alt="Circle2 image" className="absolute left-[-0px] md:bottom-[-50px] w-[200px] bottom-0 md:w-[500px] h-auto" />
           <div className="absolute inset-0 bg-blue-950 opacity-20"></div>
@@ -84,7 +84,7 @@ const AiService = () => {
       </section>
 
       {/* Cards section with slight overlap and rounded top corners */}
-      <div className="relative z-10 -mt-16 rounded-t-[72px] overflow-hidden">
+      <div className="relative z-[5] -mt-16 rounded-t-[72px] overflow-hidden">
         <Cards cardData={cardData} />
       </div>
       <Partner />

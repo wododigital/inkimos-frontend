@@ -19,7 +19,7 @@ const Career = React.memo(() => {
     setOpen(true);
   }
   return (<>
-        <div className="w-full min-h-[400px] md:min-h-[580px] flex items-center justify-center relative">
+        <div className="w-full min-h-[400px] md:min-h-[500px] flex items-center justify-center relative">
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{
@@ -29,12 +29,11 @@ const Career = React.memo(() => {
                 <div className="absolute inset-0 bg-black opacity-50"></div>
             </div>
 
-            <div className="absolute">
+            <div className="relative mt-28 flex flex-col items-center justify-center mb-10 md:mb-20 px-4">
                 <h1 className='text-[25.6px] sm:text-[40px] text-white font-semibold text-center'>
                     Join Inkimos
                 </h1>
                 <h2 className='text-white text-base sm:text-lg text-center px-1 sm:px-0' >Join Inkimos for an exciting journey. Collaborate with talented individuals and contribute to innovative <br/>solutions. Unlock your potential with us.
-
                 </h2>
             </div>
         </div>

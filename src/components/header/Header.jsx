@@ -5,9 +5,10 @@ import logo from '../../assets/Logo-01.png'
 import { Link } from 'react-router-dom'
 
 const navigation = [
+  { name: ' Industry Expertise', href: '/industry-expertise' },
   { name: 'Know Inkimos', href: '/about' },
   { name: 'Insights', href: '/insights' },
-  { name: 'Careers', href: '/careers' },
+  { name: 'Careers', href: '/careers' }
 ]
 
 const Header = () => {
@@ -144,32 +145,7 @@ const Header = () => {
                   </div>
                 </div>
               </div>
-              <div className='menu-item '>
-                <a to='#' className="font-semibold hover:text-green">
-                  Industry Expertise
-                </a>
-                <div className="megamenu text-black p-5 px-10">
-                  <div className='border-b-[1px] border-green'>
-                    <h2 className='text-2xl'>Our Services</h2>
-                  </div>
-                  <div className="flex flex-wrap justify-between">
-                      {servicesData.map((category, index) => (
-                          <div key={index} className="menu-column py-5 w-full md:w-1/3 lg:w-1/3 px-4 py-5">
-                              <h3 className="text-xl font-semibold">{category.title}</h3>
-                              <ul className="py-2">
-                                  {category.services.map((service, idx) => (
-                                      <li key={idx} className="py-1">
-                                          <a href={service.link} className="hover:text-green">{service.name}</a>
-                                      </li>
-                                  ))}
-                              </ul>
-                              <a href={category.viewAllLink} className="hover:text-green">View all</a>
-                          </div>
-                      ))}
-                  </div>
-
-                </div>
-              </div>
+            
             {navigation.map((item) => (
               <Link key={item.name} to={item.href} className="font-semibold  hover:text-green ">
                 {item.name}

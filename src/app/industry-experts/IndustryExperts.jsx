@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import realestate from '../../assets/Real-Estate-Inkimos-Industry-Focus-2.jpg';
 import automotive from '../../assets/Inkimos-Automotive-Industry-Focus-1024x585.jpg';
 import manufacturing from '../../assets/Inkimos-Manufacturing-Image-1024x585.jpg';
@@ -8,6 +8,12 @@ import insurance from '../../assets/a59602e9-aa15-455c-85c5-cdcad9484aff-1024x77
 import logo from '../../assets/IMG 5.png';
 import PartnerService from '../../components/PartnerService';
 const IndustryExperts = React.memo(() => {
+  useEffect(()=>{
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  },[])
     const industries = [
         {
           title: "Real Estate",
@@ -40,7 +46,7 @@ const IndustryExperts = React.memo(() => {
           image: insurance
         }
         
-      ];
+    ];
   return (
     <>
       <div className="relative w-full min-h-[400px] md:min-h-[500px] bg-dblack flex lg:items-end justify-center">

@@ -32,43 +32,45 @@ const ImageGridService = () => {
           {[...Array(itemsCount)].map((_, idx) => (
             <div key={idx} className="flex gap-16">
               <div className="relative group">
-              <img
-                src={WALL}
-                alt="Image 1"
-                className="w-[20vw] sm:w-28 h-auto filter pt-1 invert brightness-0 contrast-100 transition duration-500 ease-in-out "
-              />
+                <img
+                  src={WALL}
+                  alt="Image 1"
+                  className="w-28 h-auto filter pt-1 invert brightness-0 contrast-100 transition duration-500 ease-in-out "
+                />
 
               </div>
               <div className="relative group">
                 <img
                   src={JPM}
                   alt="Image 2"
-                  className="w-[20vw] sm:w-28 h-auto filter invert pt-4 brightness-0 contrast-100 transition duration-500 ease-in-out "
+                  className="w-28 h-auto filter invert pt-4 brightness-0 contrast-100 transition duration-500 ease-in-out "
                   />
               </div>
               <div className="relative group">
                 <img
                   src={SIEM}
                   alt="Image 3"
-                  className="w-[20vw] sm:w-28 h-auto filter invert pt-2 brightness-0 contrast-100 transition duration-500 ease-in-out "
+                  className="w-28 h-auto filter invert pt-2 brightness-0 contrast-100 transition duration-500 ease-in-out "
                   />
               </div>
               <div className="relative group">
                 <img
                   src={MAYO}
                   alt="Image 4"
-                  className="w-[20vw] sm:w-28 h-auto filter invert pt-1 brightness-0 contrast-100 transition duration-500 ease-in-out "
+                  className="w-28 h-auto filter invert pt-1 brightness-0 contrast-100 transition duration-500 ease-in-out "
                   />
               </div>
               <div className="relative group">
                 <img
                   src={DHL}
                   alt="Image 5"
-                  className="w-[20vw] sm:w-28 h-auto filter invert brightness-0 pt-2 contrast-100 transition duration-500 ease-in-out "
+                  className="w-28 h-auto filter invert brightness-0 pt-2 contrast-100 transition duration-500 ease-in-out "
                   />
               </div>
+              
             </div>
           ))}
+      
         </div>
       </div>
     </>

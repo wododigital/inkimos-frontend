@@ -7,17 +7,17 @@ const Footer = () => {
        'Pages': [
             { label: 'Home', path: '/' },
             { label: 'About', path: '/about' },
-            { label: 'What we do', path: '/what-we-do' },
+            { label: 'What we do', path: '/our-services' },
             { label: 'Careers', path: '/careers' },
             { label: 'Insights', path: '/insights' }
         ],
         'Services': [
-            { label: 'Artificial Intelligence', path: '/services/ai' },
-            { label: 'Business Process Outsourcing', path: '/services/bpo' },
-            { label: 'Cloud Computing', path: '/services/cloud' },
-            { label: 'Digital Transformation', path: '/services/digital-transformation' },
-            { label: 'Custom Software', path: '/services/custom-software' },
-            { label: 'Managed Services & IT support', path: '/services/it-support' }
+            { label: 'Artificial Intelligence', path: '/our-services/artificial-intelligence' },
+            { label: 'Business Process Outsourcing', path: '/our-services/business-process-outsourcing' },
+            { label: 'Cloud Computing', path: '/our-services/cloud-computing' },
+            { label: 'Digital Transformation', path: '/our-services/digital-transformation' },
+            { label: 'Custom Software', path: '/our-services/custom-software' },
+            { label: 'Managed Services & IT support', path: '/our-services/managed-services-it-support' }
         ],
         'Support': [
             { label: 'Contact us', path: '/contact' },

@@ -31,8 +31,6 @@ return(<>
         <Route path="/careers" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About/>}/>
-        <Route path="/partner" element={<Partner/>}/>
-        <Route path="/card" element={<Cards/>}/>
         <Route path="/our-services/artificial-intelligence" element={<AiService/>}/>
         <Route path='/our-services/business-process-outsourcing' element={<BpoService/>}/>
         <Route path='/our-services/cloud-computing' element={<CloudService/>}/>

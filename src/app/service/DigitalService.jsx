@@ -1,4 +1,4 @@
-import {React,useEffect} from 'react';
+import { React, useEffect } from 'react';
 import Di1 from '../../assets/Dig (1).png';
 import Di2 from '../../assets/Dig (6).png';
 import Di3 from '../../assets/Dig (5).png';
@@ -14,12 +14,12 @@ import './service.css';
 
 
 const DigitalService = () => {
-  useEffect(()=>{
+  useEffect(() => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
-  },[])
+  }, [])
   const cardData = [
     {
       title: 'Product Engineering & Development',
@@ -52,7 +52,7 @@ const DigitalService = () => {
     {
       title: 'Agile Development & Product Delivery',
       description:
-         'Utilizing agile methodologies to deliver digital products rapidly and efficiently. Our approach ensures iterative progress, quick adaptation to change, and on-time delivery that meets your evolving business needs.',
+        'Utilizing agile methodologies to deliver digital products rapidly and efficiently. Our approach ensures iterative progress, quick adaptation to change, and on-time delivery that meets your evolving business needs.',
       mainImage: Di5,
       secondaryImage: Inkimos,
     },
@@ -67,26 +67,26 @@ const DigitalService = () => {
 
   return (
     <>
-     <section id="heading" className="bg-black relative">
-  <div className="bg-black min-h-[450px] w-full flex items-center justify-center flex-col text-center relative">
-    <img src={Digbg} alt="Circle1 image" className="absolute right-0  w-[100px] h-[225px] md:w-[190px] md:h-[300px]" />
-    <img src={Digbg1} alt="Circle2 image" className="absolute left-[-0px] md:bottom-[-50px] w-[200px] bottom-0 md:w-[200px] h-auto" />
-    <div className="absolute inset-0 bg-slate-600 opacity-10"></div>
-    <div className="relative flex flex-col items-center justify-center mb-10 md:mb-20 px-4">
-      <h1 className="text-[24px] md:text-[36px] lg:text-[48px] font-medium text-white animate-slide-in max-w-[1000px]">
-      Driving Business Evolution Through Digital Innovation      </h1>
-      <h2 className="text-sm md:text-base lg:text-lg font-light text-white max-w-md md:max-w-2xl lg:max-w-4xl mt-4 animate-slide-in">
-      Accelerate your digital journey with innovative product engineering, customer-centric experiences, and future-ready strategies. We help you evolve and stay ahead in a rapidly changing world.      </h2>
-    </div>
-  </div>
-</section>
+      <section id="heading" className="bg-bgblue relative">
+        <div className="bg-bgblue min-h-[550px] w-full flex items-center justify-center flex-col text-center relative">
+          <img src={Digbg} alt="Circle1 image" className="absolute right-0  w-[100px] h-[225px] md:w-[200px] md:h-[300px]" />
+          <img src={Digbg1} alt="Circle2 image" className="absolute left-[-0px] md:bottom-[50px] w-[200px] bottom-0 md:w-[200px] h-auto" />
+          <div className="absolute inset-0 opacity-10"></div>
+          <div className="relative mt-28 flex flex-col items-center justify-center mb-10 md:mb-20 px-4">
+            <h1 className="text-[24px] md:text-[36px] lg:text-[48px] font-medium text-white animate-slide-in max-w-[1000px]">
+              Driving Business Evolution Through Digital Innovation      </h1>
+            <h2 className="text-sm md:text-base font-light text-white max-w-md md:max-w-2xl lg:max-w-4xl mt-4 animate-slide-in">
+              Accelerate your digital journey with innovative product engineering, customer-centric experiences, and future-ready strategies. We help you evolve and stay ahead in a rapidly changing world.      </h2>
+          </div>
+        </div>
+      </section>
 
-      
+
       {/* Cards section with slight overlap and rounded top corners */}
-      <div className="relative z-10 -mt-16 rounded-t-[72px] overflow-hidden">
+      <div className="relative z-[5] -mt-16 rounded-t-[72px] overflow-hidden">
         <Cards cardData={cardData} />
       </div>
-      <Partner/>
+      <Partner />
     </>
   );
 };

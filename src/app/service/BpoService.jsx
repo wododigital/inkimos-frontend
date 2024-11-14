@@ -1,4 +1,4 @@
-import {React,useEffect} from 'react';
+import { React, useEffect } from 'react';
 import Bpo1 from '../../assets/Bpo (1).png';
 import Bpo2 from '../../assets/Bpo (5).png';
 import Bpo3 from '../../assets/Bpo (4).png';
@@ -13,12 +13,12 @@ import Partner from '../../components/Partner';
 import './service.css';
 
 const BpoService = () => {
-  useEffect(()=>{
+  useEffect(() => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
-  },[])
+  }, [])
   const cardData = [
     {
       title: 'Process Optimization & Outsourcing',
@@ -30,7 +30,7 @@ const BpoService = () => {
     {
       title: 'Digital Transformation in Outsourcing',
       description:
-      'Integrating AI, automation, and cutting-edge digital tools into outsourced operations to drive continuous improvement, ensure scalability, and foster innovation across all processes.',
+        'Integrating AI, automation, and cutting-edge digital tools into outsourced operations to drive continuous improvement, ensure scalability, and foster innovation across all processes.',
       mainImage: Bpo2,
       secondaryImage: Inkimos,
     },
@@ -66,39 +66,38 @@ const BpoService = () => {
 
   return (
     <>
-     <section id="heading" className="bg-black relative">
-  <div className="bg-black min-h-[450px] w-full flex items-center justify-center flex-col text-center relative">
-    <img 
-      src={BpoBg} 
-      alt="Background image on the right" 
-      className="absolute right-0 w-[100px] h-[225px] md:w-[200px] md:h-[450px]" 
-    />
-    <img 
-      src={BpoBg1} 
-      alt="Background image on the left" 
-      className="absolute left-[0px] bottom-[10px] w-[200px] h-[200px] md:left-[-100px] md:bottom-[-80px] md:w-[400px] md:h-[400px]" 
-    />
-    <div className="absolute inset-0 bg-black opacity-10"></div>
-    <div className="relative flex flex-col items-center justify-center mb-10 md:mb-20 px-4">
-        <h1 className="text-[28px] sm:text-[36px] md:text-[48px] font-medium text-white animate-slide-in max-w-[800px]">
-        Maximize Performance with Expert Consulting and Outsourcing Services    </h1>
+      <section id="heading" className="bg-black relative">
+        <div className="bg-black min-h-[550px] w-full flex items-center justify-center flex-col text-center relative">
+          <img
+            src={BpoBg}
+            alt="Background image on the right"
+            className="absolute right-0 w-[100px] h-[225px] md:w-[200px] md:h-[450px]"
+          />
+          <img
+            src={BpoBg1}
+            alt="Background image on the left"
+            className="absolute left-[0px] bottom-[10px] w-[200px] h-[200px] md:left-[0px] md:bottom-[0px] md:w-[400px] md:h-[400px]"
+          />
+          <div className="absolute inset-0 bg-black opacity-10"></div>
+          <div className="relative mt-28 flex flex-col items-center justify-center mb-10 md:mb-20 px-4">
+            <h1 className="text-[28px] sm:text-[36px] md:text-[48px] font-medium text-white animate-slide-in max-w-[800px]">
+              Maximize Performance with Expert Consulting and Outsourcing Services    
+            </h1>
+            <h2 className="text-sm sm:text-base font-light text-white max-w-sm sm:max-w-lg md:max-w-3xl lg:max-w-4xl mt-4 animate-slide-in">
+              Achieve greater efficiency and growth with a combination of expert consulting and tailored BPO services. We help streamline your operations, reduce costs, and optimize processes for long-term success. Our strategic solutions are designed to empower your business at every level.
+            </h2>
+          </div>
+        </div>
+      </section>
 
 
-      <h2 className="text-sm sm:text-base md:text-lg font-light text-white max-w-sm sm:max-w-lg md:max-w-3xl lg:max-w-4xl mt-4 animate-slide-in">
-      Achieve greater efficiency and growth with a combination of expert consulting and tailored BPO services. We help streamline your operations, reduce costs, and optimize processes for long-term success. Our strategic solutions are designed to empower your business at every level.
-      </h2>
-    </div>
-  </div>
-</section>
-
-      
       {/* Cards section with slight overlap and rounded top corners */}
-      <div className="relative z-10 -mt-16 rounded-t-[72px] overflow-hidden">
+      <div className="relative z-[5] -mt-16 rounded-t-[72px] overflow-hidden">
         <Cards cardData={cardData} />
       </div>
       <div>
 
-      <Partner/>
+        <Partner />
       </div>
     </>
   );
