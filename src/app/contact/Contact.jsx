@@ -1,4 +1,4 @@
-import {React,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import ContactBg from '../../assets/contactbg.png';
 import Inkimos from '../../assets/IMG 5.png';
 import Arrow from '../../assets/IMG 3.svg';
@@ -8,8 +8,99 @@ import DubaiBg from '../../assets/dubai.jpg';
 import CaliforniaBg from '../../assets/california.png';
 import InvengerBg from '../../assets/Invenger.png';
 import SectionHeading from '../../components/heading/Heading';
+import  axios  from 'axios';
+import config from '../../config';
 
 const Contact = () => {
+  const [data, setData]=useState({
+    fullName:'',
+    phoneNumber:'',
+    email:'',
+    industry:'',
+    message:'',
+    checkbox:false,
+  });
+
+  const [errors, setErrors]=useState(null);
+  const validateForm = () => {
+      const validationErrors = {};
+
+      if (!data.fullName && data.fullName.trim()=== "") {
+          validationErrors.fullName="Name is required!";
+      }
+
+      if (!data.phoneNumber || data.phoneNumber.trim()=== "") {
+          validationErrors.phoneNumber="Number is required!";
+      }
+
+      if (!data.email || data.email.trim()=== "") {
+          validationErrors.email="Email is required!";
+      }else {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(data.email)) {
+              validationErrors.email = "Please enter a valid email address!";
+          }
+      }
+
+      if (!data.industry) {
+          validationErrors.industry="Industry is required!";
+      }
+
+      if (!data.message || data.message.trim()=== "") {
+          validationErrors.message = 'Message is required!';
+      } 
+
+      if (!data.checkbox) {
+        validationErrors.checkbox ='Accept Terms & Conditions';
+      } 
+
+      return validationErrors;
+  };
+
+  const inputHandler=(e)=>{
+      const { name, value}=e.target;
+      setData((preData)=>({
+          ...preData,
+          [name]:value
+      }))
+  }
+
+  const formHandler=(e)=>{
+      e.preventDefault();
+      // console.log('working');
+      const validationErrors = validateForm();
+      if (Object.keys(validationErrors).length > 0) {
+          setErrors(validationErrors);
+          //console.log(validationErrors);
+      } else {
+          setErrors(null);
+          const formData=new FormData();
+          formData.append('name', data.fullName);
+          formData.append('phone', data.phoneNumber);
+          formData.append('email', data.email);
+          formData.append('industry', data.industry);
+          formData.append('details', data.message);
+
+          axios.post(`${config.baseUrl}/api/contact-us`, formData)
+          .then((res)=>{
+              // console.log(res.data);
+              if(res.data.status==="success"){
+                  setData({
+                    fullName:'',
+                    phoneNumber:'',
+                    email:'',
+                    industry:'',
+                    message:'',
+                    checkbox:false,
+                  });
+                 
+              }
+          })
+          .catch((err)=>{
+              console.log(err);
+          })
+      }
+  }
   useEffect(()=>{
     window.scrollTo({
       top: 0,
@@ -19,7 +110,7 @@ const Contact = () => {
   return (
     <>
       <div
-        className="w-full min-h-[400px] md:min-h-[777px] flex items-center justify-center relative bg-black"
+        className="w-full min-h-[480px] md:min-h-[857px] flex items-center justify-center relative bg-black"
         style={{
           backgroundImage: `url(${ContactBg})`,
           backgroundSize: 'cover',
@@ -27,7 +118,7 @@ const Contact = () => {
         }}
       >
         <img src={Arrow} alt='arrow' className='absolute bottom-[-48px] md:bottom-[-160px] right-0 w-[50px] h-[100px] md:w-[154px] md:h-[344px] z-10' />
-        <section className="max-w-[1440px] mx-auto px-5 sm:px-12 py-8 lg:py-24">
+        <section className="max-w-[1440px] mx-auto px-5 sm:px-12 mt-10">
           <div className="z-10 text-white flex flex-col md:flex-row gap-4">
             {/* Column 1 - Text */}
             <div className="flex-1 flex flex-col items-start space-y-4 md:space-y-8">
@@ -70,49 +161,74 @@ const Contact = () => {
 
             {/* Column 2 - Form */}
             <div className="flex-1 flex flex-col bg-grey bg-opacity-55 backdrop-blur-lg p-6 md:p-12 rounded-xl">
-              <form className="space-y-4 md:space-y-6">
-                <div className="flex flex-col">
+              <form  onSubmit={formHandler}>
+                <div className='py-3'>
                   <input
                     type="text"
                     placeholder="Full Name"
-                    className="border-b border-white py-2 bg-transparent text-white focus:outline-none placeholder:text-white"
+                    className="border-b w-full border-white py-2 bg-transparent text-white focus:outline-none placeholder:text-white"
+                    name="fullName"
+                    value={data.fullName}
+                    onChange={inputHandler}
                   />
+                  {errors && <p className="text-green text-sm">{errors.fullName}</p>}
                 </div>
 
-                <div className="flex flex-col">
+                <div className='py-3'>
                   <input
                     type="tel"
                     placeholder="Phone"
-                    className="border-b border-white py-2 bg-transparent text-white focus:outline-none placeholder:text-white"
+                    className="w-full border-b border-white py-2 bg-transparent text-white focus:outline-none placeholder:text-white"
+                    name="phoneNumber"
+                    value={data.phoneNumber}
+                    onChange={inputHandler}
                   />
+                   {errors && <p className="text-green text-sm">{errors.phoneNumber}</p>}
                 </div>
 
-                <div className="flex flex-col">
+                <div className='py-3'>
                   <input
                     type="email"
                     placeholder="Email"
-                    className="border-b border-white py-2 bg-transparent text-white focus:outline-none placeholder:text-white"
+                    className="w-full border-b border-white py-2 bg-transparent text-white focus:outline-none placeholder:text-white"
+                    name="email"
+                    value={data.email}
+                    onChange={inputHandler}
                   />
+                  {errors && <p className="text-green text-sm">{errors.email}</p>}
                 </div>
 
-                <div className="flex flex-col">
-                  <select className="border-b border-white py-2 bg-transparent text-white focus:outline-none placeholder:text-white">
-                    <option value="" disabled selected className='text-black'>Select Industry Type</option>
+                <div className='py-3'>
+                  <select className="w-full border-b border-white py-2 bg-transparent text-white focus:outline-none placeholder:text-white"
+                    name="industry"
+                    value={data.industry}
+                    onChange={inputHandler}
+                  >
+                    <option value="" disabled className='text-black'>Select Industry Type</option>
+                    <option value="IT" className='text-black'>IT</option>
+          
                   </select>
+                  {errors && <p className="text-green text-sm">{errors.industry}</p>}
                 </div>
 
-                <div className="flex flex-col">
+                <div className='py-3'>
                   <textarea
                     placeholder="Message"
-                    className="border-b border-white py-2 bg-transparent text-white focus:outline-none placeholder:text-white"
+                    className="w-full border-b border-white py-2 bg-transparent text-white focus:outline-none placeholder:text-white"
+                    name="message"
+                    value={data.message}
+                    onChange={inputHandler}
                   ></textarea>
+                  {errors && <p className="text-green text-sm">{errors.message}</p>}
                 </div>
 
-                <div className="flex items-center">
+                <div className='py-3'>
                   <label htmlFor="agree" className="text-white text-sm md:text-base">
-                  <input type="checkbox" id="agree" className="mr-2" />
+                  <input type="checkbox" id="agree" className="mr-2" checked={data.checkbox} onChange={(e) => console.log(e.target.checked ? setData((preData)=>({...preData, checkbox: true})) : setData((preData)=>({...preData, checkbox: false})))} />
                     I give consent to the processing of my personal data given in the contact form above as well as receiving commercial and marketing communications under the terms and conditions of Inkimos' Privacy Policy.
                   </label>
+
+                  {errors && <p className="text-green text-sm">{errors.checkbox}</p>}
                 </div>
 
                 <div className="flex justify-center">

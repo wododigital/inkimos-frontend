@@ -23,12 +23,12 @@ import BlogCards from '../blog/Blogcards';
 
 
 const Home = () => {
-    // useEffect(()=>{
-    //     window.scrollTo({
-    //       top: 0,
-    //       behavior: "smooth",
-    //     });
-    //   },[])
+    useEffect(()=>{
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      },[])
     const scrollIcon = useRef(null); // Ref to target container
     const animationInstance = useRef(null); // Ref to hold the animation instance
     const imageSectionRef = useRef(null);
