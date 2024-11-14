@@ -1,0 +1,25 @@
+.blog-card {
+    transition: transform 0.3s ease, border 0.3s ease; /* Add transition for smooth border change */
+  }
+  
+  .blog-card:hover {
+    border: 2px solid #22DAC4; 
+  }
+  
+  
+  .blog-card img {
+    object-fit: cover;
+  }
+  
+  .blog-card h3 {
+    font-size: 14px;
+  }
+  
+  .blog-card .section {
+    font-size: 14px;
+  }
+  
+  .blog-card p {
+    font-size: 19.2px;
+  }
+  
