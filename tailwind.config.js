@@ -15,7 +15,8 @@ export default {
         dblack:'#000000',
         dblue:'#191931',
         aboutgrey:'#666666',
-        service:'#00021F'
+        service:'#00021F',
+        arrowBlue:'#0055FF'
       },
       sans: ['Nunito Sans', 'sans-serif'],    },
   },

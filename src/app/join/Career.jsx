@@ -1,4 +1,4 @@
-import React from 'react'
+import {React,useEffect} from 'react'
 import CarrerBg from '../../assets/carrer-bg.jpg'
 import JobBg from '../../assets/IMG 2.svg'
 import Inkimos from '../../assets/IMG 5.png'
@@ -6,6 +6,12 @@ import EnquiryBg from '../../assets/IMG 4.svg'
 import SectionHeading from '../../components/heading/Heading'
 import './carrer.css'
 const Career = () => {
+    useEffect(()=>{
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      },[])
   return (<>
 <div className="w-full min-h-[400px] md:min-h-[500px] flex items-center justify-center relative">
         <div
@@ -80,10 +86,11 @@ const Career = () => {
         className="bg-black w-full min-h-[100px] sm:min-h-[291px] rounded-3xl sm:rounded-[35px] p-4 sm:p-16 bbg "
 >
     <h2 className='text-white text-[19px] sm:text-[40px] sm:font-normal px-6 md:px-0'>Explore New Opportunities Beyond Our Current Openings</h2>
+<Link to='/contact'>
     <div className=' p-3 sm:pt-10 px-6 sm:px-0'>
-
     <button className='bg-green text-black px-[15px] py-[8px] sm:px-[30px] sm:py-[15px] rounded-full sm:font-medium text-[12px] sm:text-[19px] '>Send Enquiry</button>
     </div>
+</Link>
         </div>
 
     </section>

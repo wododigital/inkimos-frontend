@@ -1,4 +1,4 @@
-import React from 'react';
+import {React,useEffect} from 'react';
 import ContactBg from '../../assets/contactbg.png';
 import Inkimos from '../../assets/IMG 5.png';
 import Arrow from '../../assets/IMG 3.svg';
@@ -10,6 +10,12 @@ import InvengerBg from '../../assets/Invenger.png';
 import SectionHeading from '../../components/heading/Heading';
 
 const Contact = () => {
+  useEffect(()=>{
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  },[])
   return (
     <>
       <div
