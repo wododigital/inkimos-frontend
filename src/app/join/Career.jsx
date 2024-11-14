@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import CarrerBg from '../../assets/carrer-bg.jpg'
 import JobBg from '../../assets/IMG 2.svg'
 import Inkimos from '../../assets/IMG 5.png'
@@ -8,6 +8,12 @@ import './carrer.css'
 import FormModel from './FormModel'
 
 const Career = () => {
+    useEffect(()=>{
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      },[])
   const [open, setOpen] = useState(false);
 
   const openModal=()=>{

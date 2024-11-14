@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ContactBg from '../../assets/contactbg.png';
 import Inkimos from '../../assets/IMG 5.png';
 import Arrow from '../../assets/IMG 3.svg';
@@ -101,6 +101,12 @@ const Contact = () => {
           })
       }
   }
+  useEffect(()=>{
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  },[])
   return (
     <>
       <div

@@ -11,11 +11,19 @@ import Inkimos from '../../assets/IMG 5.png'
 
 
 const About = () => {
+
    const [isVisibleMission, setIsVisibleMission] = useState(false);
    const [isVisibleChallenges, setIsVisibleChallenges] = useState(false);
    const [isVisibleCount, setIsVisibleCount] = useState(false); 
    const imageSectionRef = useRef(null);
 
+   useEffect(()=>{
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  },[])
+  
    useEffect(() => {
      const handleObserver = (entries) => {
        entries.forEach(entry => {

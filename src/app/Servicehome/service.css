@@ -1,0 +1,69 @@
+@keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft 1.8s ease forwards;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 1.8s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 1; /* Start with opacity 0 (fully transparent) */
+    }
+    to {
+      opacity: 0; /* End with opacity 1 (fully opaque) */
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 0; /* Start with opacity 1 (fully opaque) */
+    }
+    to {
+      opacity: 1; /* End with opacity 0 (fully transparent) */
+    }
+  }
+  
+  /* Applying fade-in animation */
+  .animate-fade-in {
+    animation: fadeIn 2.8s ease forwards; /* Fade in */
+  }
+  
+  /* Applying fade-out animation */
+  .animate-fade-out {
+    animation: fadeOut 2.8s ease forwards; /* Fade out */
+  }
+
+  @keyframes slideInTop {
+    0% {
+      transform: translateY(100%); /* Start from below the container */
+      opacity: 0; /* Start with transparency */
+    }
+    100% {
+      transform: translateY(0); /* End at the normal position */
+      opacity: 1; /* Fully visible at the end */
+    }
+  }
+  .animate-slide-in-top {
+    animation: slideInTop 1.8s ease forwards;
+  }
+  
+  

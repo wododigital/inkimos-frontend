@@ -2,8 +2,10 @@ import React from 'react';
 import Globe from '../assets/globe.mp4';
 import { Link } from 'react-router-dom';
 import Inkimos from '../assets/IMG 5.png';
+import ImageGridService from './ImageGridService';
 
-const Partner = () => {
+
+const PartnerService = () => {
   return (
     <section className="bg-service py-8 mt-8"> {/* Added margin top to avoid overlap */}
       <div className="max-w-[1200px] mx-auto px-5 sm:px-10 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -52,8 +54,11 @@ const Partner = () => {
           </div>
         </div>
       </div>
+        <div className="w-full mt-4 pb-4 sm:pb-8 ">
+        <ImageGridService />
+      </div>
     </section>
   );
 };
 
-export default Partner;
+export default PartnerService;
