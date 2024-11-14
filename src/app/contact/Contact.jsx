@@ -11,7 +11,7 @@ import SectionHeading from '../../components/heading/Heading';
 import  axios  from 'axios';
 import config from '../../config';
 
-const Contact = () => {
+const Contact = React.memo(() => {
   const [data, setData]=useState({
     fullName:'',
     phoneNumber:'',
@@ -291,6 +291,6 @@ const Contact = () => {
       </section>
     </>
   );
-};
+});
 
 export default Contact;

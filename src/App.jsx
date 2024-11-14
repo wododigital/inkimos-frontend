@@ -18,6 +18,7 @@ import CustomService from './app/service/CustomService';
 import ItService from './app/service/ItService';
 import Service from './app/Servicehome/Service';
 import Home from './app/home/Home';
+import IndustryExperts from './app/industry-experts/IndustryExperts';
 function App() {
  
 
@@ -26,20 +27,21 @@ return(<>
       <Header/>
         <Routes>
         <Route path="/" element={<Home />} />
-        <Route path='/service' element={<Service/>}/>
-        <Route path="/career" element={<Career />} />
+        <Route path='/our-services' element={<Service/>}/>
+        <Route path="/careers" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About/>}/>
         <Route path="/partner" element={<Partner/>}/>
         <Route path="/card" element={<Cards/>}/>
-        <Route path="/artificial-intelligence" element={<AiService/>}/>
-        <Route path='/business-process-outsourcing' element={<BpoService/>}/>
-        <Route path='/cloud-computing' element={<CloudService/>}/>
-        <Route path='/digital-transformation' element={<DigitalService/>}/>
-        <Route path='/custom-software' element={<CustomService/>}/>
-        <Route path='/managed-services-it-support' element={<ItService/>}/>
+        <Route path="/our-services/artificial-intelligence" element={<AiService/>}/>
+        <Route path='/our-services/business-process-outsourcing' element={<BpoService/>}/>
+        <Route path='/our-services/cloud-computing' element={<CloudService/>}/>
+        <Route path='/our-services/digital-transformation' element={<DigitalService/>}/>
+        <Route path='/our-services/custom-software' element={<CustomService/>}/>
+        <Route path='/our-services/managed-services-it-support' element={<ItService/>}/>
         <Route path="/terms-and-conditions" element={<TermsAndConditions/>}/>
         <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
+        <Route path="/industry-expertise" element={<IndustryExperts/>}/>
         </Routes>
       <Footer/> 
     </Router>

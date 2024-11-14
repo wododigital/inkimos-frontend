@@ -8,7 +8,7 @@ import ImageGridService from './ImageGridService';
 const PartnerService = () => {
   return (
     <section className="bg-service py-8 mt-8"> {/* Added margin top to avoid overlap */}
-      <div className="max-w-[1200px] mx-auto px-5 sm:px-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-10 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="flex flex-col justify-center text-left">
           <img src={Inkimos} alt="Inkimos icon" className="w-6 h-1 mb-3 md:mb-6" />
           <h2 className="text-3xl sm:text-[32px] font-medium text-white mb-3 md:mb-6">

@@ -1,4 +1,4 @@
-import {React,useEffect} from 'react';
+import { React, useEffect } from 'react';
 import Cbg from '../../assets/cloud (1).png'
 import Cbg1 from '../../assets/cloud (8).png'
 import Cl1 from '../../assets/cloud (7).png'
@@ -14,17 +14,17 @@ import './service.css';
 
 
 const AiService = () => {
-  useEffect(()=>{
+  useEffect(() => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
-  },[])
+  }, [])
   const cardData = [
     {
       title: 'Cloud Infrastructure Management',
       description:
-    'Design, provision, and manage secure, scalable cloud environments on platforms like AWS, Azure, and Google Cloud. Ensure high availability and optimized performance tailored to your specific business needs, with a focus on reliability and flexibility.',
+        'Design, provision, and manage secure, scalable cloud environments on platforms like AWS, Azure, and Google Cloud. Ensure high availability and optimized performance tailored to your specific business needs, with a focus on reliability and flexibility.',
       mainImage: Cl1,
       secondaryImage: Inkimos,
     },
@@ -67,28 +67,27 @@ const AiService = () => {
 
   return (
     <>
-     <section id="heading" className="bg-black relative">
-  <div className="bg-black min-h-[450px] w-full flex items-center justify-center flex-col text-center relative">
-    <img src={Cbg1} alt="Circle1 image" className="absolute right-0 w-[100px] h-[225px] md:w-[200px] md:h-[450px]" />
-    <img src={Cbg} alt="Circle2 image" className="absolute left-[-0px] md:bottom-[-150px] w-[200px] bottom-0 md:w-[500px] h-auto" />
-    <div className="absolute inset-0 bg-blue-950 opacity-20"></div>
-    <div className="relative flex flex-col items-center justify-center mb-10 md:mb-20 px-4">
-      <h1 className="text-[24px] md:text-[36px] lg:text-[48px] font-medium text-white animate-slide-in max-w-[1000px]">
-        Scalable, Secure, and Strategic Cloud Solutions for Modern Business
-      </h1>
-      <h2 className="text-sm md:text-base lg:text-lg font-light text-white max-w-md md:max-w-2xl lg:max-w-4xl mt-4 animate-slide-in">
-      Empower your business with secure, flexible, and future-ready cloud environments. From seamless migration to multi-cloud management, we deliver customized cloud solutions that optimize performance and ensure business continuity.
-      </h2>
-    </div>
-  </div>
-</section>
+      <section id="heading" className="bg-black relative">
+        <div className="bg-[#0E0E1F] min-h-[550px] w-full flex items-center justify-center flex-col text-center relative">
+          <img src={Cbg1} alt="Circle1 image" className="absolute right-0 w-[100px] h-[225px] md:w-[200px] md:h-[450px]" />
+          <img src={Cbg} alt="Circle2 image" className="absolute left-[-0px] md:bottom-[-50px] w-[200px] bottom-0 md:w-[500px] h-auto" />
+          <div className="absolute inset-0 bg-blue-950 opacity-20"></div>
+          <div className="relative flex flex-col items-center justify-center px-4">
+            <h1 className="text-[24px] md:text-[36px] lg:text-[48px] font-medium text-white animate-slide-in max-w-[1000px]">
+              Scalable, Secure, and Strategic Cloud Solutions for Modern Business
+            </h1>
+            <h2 className="text-sm md:text-base font-light text-white max-w-md md:max-w-2xl lg:max-w-4xl mt-4 animate-slide-in">
+              Empower your business with secure, flexible, and future-ready cloud environments. From seamless migration to multi-cloud management, we deliver customized cloud solutions that optimize performance and ensure business continuity.
+            </h2>
+          </div>
+        </div>
+      </section>
 
-      
       {/* Cards section with slight overlap and rounded top corners */}
       <div className="relative z-10 -mt-16 rounded-t-[72px] overflow-hidden">
         <Cards cardData={cardData} />
       </div>
-      <Partner/>
+      <Partner />
     </>
   );
 };

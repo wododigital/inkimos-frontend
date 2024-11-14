@@ -5,9 +5,9 @@ import logo from '../../assets/Logo-01.png'
 import { Link } from 'react-router-dom'
 
 const navigation = [
-  { name: 'Know Inkimos', href: '/' },
+  { name: 'Know Inkimos', href: '/about' },
   { name: 'Insights', href: '/insights' },
-  { name: 'Careers', href: '/Careers' },
+  { name: 'Careers', href: '/careers' },
 ]
 
 const Header = () => {
@@ -38,18 +38,75 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollPos]);
 
+  const servicesData = [
+    {
+        title: "01. Cloud Services",
+        services: [
+            { name: "Infrastructure Management" },
+            { name: "Security & Compliance"},
+            { name: "Multi-Cloud Strategy & Integration" }
+        ],
+        viewAllLink: "/our-services/cloud-computing"
+    },
+    {
+        title: "02. Artificial Intelligence",
+        services: [
+            { name: "Predictive Analytics & Insights", link: "#" },
+            { name: "Machine Learning Model Development", link: "#" },
+            { name: "Natural Language Processing (NLP)", link: "#" }
+        ],
+        viewAllLink: "/our-services/artificial-intelligence"
+    },
+    {
+        title: "03. Software Solutions",
+        services: [
+            { name: "ERP Implementation", link: "#" },
+            { name: "CRM Development", link: "#" },
+            { name: "Custom Software Development", link: "#" }
+        ],
+        viewAllLink: "/our-services/custom-software"
+    },
+    {
+        title: "04. Consulting & BPO",
+        services: [
+            { name: "Process Optimization & Outsourcing" },
+            { name: "Data-Driven Insights & Process Consulting"},
+            { name: "Risk Management & Compliance Outsourcing"}
+        ],
+        viewAllLink: "/our-services/business-process-outsourcing"
+    },
+    {
+        title: "05. Digital Transformation",
+        services: [
+            { name: "UI/UX", link: "#" },
+            { name: "Product Engineering & Development", link: "#" },
+            { name: "Digital Experience Platforms (DXP)", link: "#" }
+        ],
+        viewAllLink: "/our-services/digital-transformation"
+    },
+    {
+        title: "06. Managed Services & IT support",
+        services: [
+            { name: "Managed Services & IT support", link: "#" },
+            { name: "Network & Infrastructure Management", link: "#" },
+            { name: "Cybersecurity Services", link: "#" }
+        ],
+        viewAllLink: "/our-services/managed-services-it-support"
+    }
+  ];
+
   return (
-    <header className={`fixed inset-x-0 top-0 z-10 lg:z-20 text-white transition-transform duration-300 bg-black ${!isVisible ? 'header-hidden' : ''}`}>
-        <nav aria-label="Global" className="max-w-[1440px] mx-auto flex items-center justify-between p-2.5 px-5 lg:px-12 relative">
+    <header className={`fixed inset-x-0 top-0 z-10 text-white transition-transform duration-300 bg-black ${!isVisible ? 'header-hidden' : ''}`}>
+        <nav aria-label="Global" className="max-w-[1440px] mx-auto flex items-center justify-between lg:p-2.5 px-5 lg:px-12 relative">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link to="/" className="-m-1.5 p-1.5">
               {/* <span className="sr-only">Your Company</span> */}
               <img
                 alt="Logo"
                 src={logo}
                 className="w-36"
               />
-            </a>
+            </Link>
           </div>
           <div className="flex lg:hidden">
             <button
@@ -70,63 +127,20 @@ const Header = () => {
                   <div className='border-b-[1px] border-green'>
                     <h2 className='text-2xl'>Our Services</h2>
                   </div>
-                  <div className="flex justify-between">
-                    <div className="menu-column py-5">
-                      <h3 className='text-xl font-semibold'>01. Cloud Services</h3>
-                      <ul className='py-2'>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Infrastructure Management</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Security & Compliance</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Security & Compliance</a></li>
-                      </ul>
-                      <a href="#">View all</a>
-                    </div>
-                    <div className="menu-column py-5">
-                      <h3 className='text-xl font-semibold'>02. Artificial Intelligence</h3>
-                      <ul className='py-2'>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Predictive Analytics & Insights</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Machine Learning Model Development</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Natural Language Processing (NLP)</a></li>
-                      </ul>
-                      <a href="#">View all</a>
-                    </div>
-                    <div className="menu-column py-5">
-                      <h3 className='text-xl font-semibold'>03. Software Solutions</h3>
-                      <ul className='py-2'>
-                        <li className='py-1'><a href="#" className='hover:text-green'>ERP Implementation</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>CRM Development</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Custom Software Development</a></li>
-                      </ul>
-                      <a href="#">View all</a>
-                    </div>
-                  </div>
-                  <div className="flex justify-between">
-                    <div className="menu-column py-5">
-                      <h3 className='text-xl font-semibold'>04. Cloud Services</h3>
-                      <ul className='py-2'>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Infrastructure Management</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Security & Compliance</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Security & Compliance</a></li>
-                      </ul>
-                      <a href="#">View all</a>
-                    </div>
-                    <div className="menu-column py-5">
-                      <h3 className='text-xl font-semibold'>05. Artificial Intelligence</h3>
-                      <ul className='py-2'>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Predictive Analytics & Insights</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Machine Learning Model Development</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Natural Language Processing (NLP)</a></li>
-                      </ul>
-                      <a href="#">View all</a>
-                    </div>
-                    <div className="menu-column py-5">
-                      <h3 className='text-xl font-semibold'>06. Software Solutions</h3>
-                      <ul className='py-2'>
-                        <li className='py-1'><a href="#" className='hover:text-green'>ERP Implementation</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>CRM Development</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Custom Software Development</a></li>
-                      </ul>
-                      <a href="#">View all</a>
-                    </div>
+                  <div className="flex flex-wrap justify-between">
+                      {servicesData.map((category, index) => (
+                          <div key={index} className="menu-column py-5 w-full md:w-1/3 lg:w-1/3 px-4">
+                              <h3 className="text-xl font-semibold">{category.title}</h3>
+                              <ul className="py-2 list-image-bullet">
+                                  {category.services.map((service, idx) => (
+                                      <li key={idx} className="py-1">
+                                          <p className="hover:text-green">{service.name}</p>
+                                      </li>
+                                  ))}
+                              </ul>
+                              <Link to={category.viewAllLink} className="underline hover:text-green">View all</Link>
+                          </div>
+                      ))}
                   </div>
                 </div>
               </div>
@@ -138,64 +152,22 @@ const Header = () => {
                   <div className='border-b-[1px] border-green'>
                     <h2 className='text-2xl'>Our Services</h2>
                   </div>
-                  <div className="flex justify-between">
-                    <div className="menu-column py-5">
-                      <h3 className='text-xl font-semibold'>01. Cloud Services</h3>
-                      <ul className='py-2'>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Infrastructure Management</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Security & Compliance</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Security & Compliance</a></li>
-                      </ul>
-                      <a href="#">View all</a>
-                    </div>
-                    <div className="menu-column py-5">
-                      <h3 className='text-xl font-semibold'>02. Artificial Intelligence</h3>
-                      <ul className='py-2'>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Predictive Analytics & Insights</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Machine Learning Model Development</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Natural Language Processing (NLP)</a></li>
-                      </ul>
-                      <a href="#">View all</a>
-                    </div>
-                    <div className="menu-column py-5">
-                      <h3 className='text-xl font-semibold'>03. Software Solutions</h3>
-                      <ul className='py-2'>
-                        <li className='py-1'><a href="#" className='hover:text-green'>ERP Implementation</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>CRM Development</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Custom Software Development</a></li>
-                      </ul>
-                      <a href="#">View all</a>
-                    </div>
+                  <div className="flex flex-wrap justify-between">
+                      {servicesData.map((category, index) => (
+                          <div key={index} className="menu-column py-5 w-full md:w-1/3 lg:w-1/3 px-4 py-5">
+                              <h3 className="text-xl font-semibold">{category.title}</h3>
+                              <ul className="py-2">
+                                  {category.services.map((service, idx) => (
+                                      <li key={idx} className="py-1">
+                                          <a href={service.link} className="hover:text-green">{service.name}</a>
+                                      </li>
+                                  ))}
+                              </ul>
+                              <a href={category.viewAllLink} className="hover:text-green">View all</a>
+                          </div>
+                      ))}
                   </div>
-                  <div className="flex justify-between">
-                    <div className="menu-column py-5">
-                      <h3 className='text-xl font-semibold'>04. Cloud Services</h3>
-                      <ul className='py-2'>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Infrastructure Management</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Security & Compliance</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Security & Compliance</a></li>
-                      </ul>
-                      <a href="#">View all</a>
-                    </div>
-                    <div className="menu-column py-5">
-                      <h3 className='text-xl font-semibold'>05. Artificial Intelligence</h3>
-                      <ul className='py-2'>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Predictive Analytics & Insights</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Machine Learning Model Development</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Natural Language Processing (NLP)</a></li>
-                      </ul>
-                      <a href="#">View all</a>
-                    </div>
-                    <div className="menu-column py-5">
-                      <h3 className='text-xl font-semibold'>06. Software Solutions</h3>
-                      <ul className='py-2'>
-                        <li className='py-1'><a href="#" className='hover:text-green'>ERP Implementation</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>CRM Development</a></li>
-                        <li className='py-1'><a href="#" className='hover:text-green'>Custom Software Development</a></li>
-                      </ul>
-                      <a href="#">View all</a>
-                    </div>
-                  </div>
+
                 </div>
               </div>
             {navigation.map((item) => (
@@ -214,14 +186,14 @@ const Header = () => {
           <div className="fixed inset-0 z-50" />
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full text-white overflow-y-auto bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
+              <Link to="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
                 <img
                   alt="Logo"
                   src={logo}
                   className="w-28"
                 />
-              </a>
+              </Link>
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
@@ -264,24 +236,56 @@ const Header = () => {
                     {navMenuOpen.services && (
                       <div className="mt-2 space-y-2 transition-all duration-200">
                         <Link
-                          to="/"
+                          to="/our-services/cloud-computing"
                           className="block rounded-lg py-1 pl-6 pr-3 text-sm leading-7 text-white hover:text-green"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           Cloud Computing
                         </Link>
                         <Link
-                          to="/"
+                          to="/our-services/artificial-intelligence"
                           className="block rounded-lg py-1 pl-6 pr-3 text-sm leading-7 text-white hover:text-green"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           Artificial Intelligence
                         </Link>
+
+                        <Link
+                          to="/our-services/business-process-outsourcing"
+                          className="block rounded-lg py-1 pl-6 pr-3 text-sm leading-7 text-white hover:text-green"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          Consulting & BPO
+                        </Link>
+
+                        <Link
+                          to="/our-services/digital-transformation"
+                          className="block rounded-lg py-1 pl-6 pr-3 text-sm leading-7 text-white hover:text-green"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          Digital Transformation
+                        </Link>
+
+                        <Link
+                          to="/our-services/custom-software"
+                          className="block rounded-lg py-1 pl-6 pr-3 text-sm leading-7 text-white hover:text-green"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          Software Solutions
+                        </Link>
+
+                        <Link
+                          to="/our-services/managed-services-it-support"
+                          className="block rounded-lg py-1 pl-6 pr-3 text-sm leading-7 text-white hover:text-green"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                         Managed Services & IT support
+                        </Link>
                       </div>
                     )}
                   </div>
                   <Link
-                    to="/"
+                    to="/about"
                     onClick={() => setMobileMenuOpen(false)}
                     className="-mx-3 block px-3 py-2 text-base leading-7 text-white hover:text-green"
                   >
@@ -301,9 +305,11 @@ const Header = () => {
                   >
                     Careers
                   </Link>
-                  <button className=" w-full bg-transparent border-2 border-green text-green px-6 py-2 rounded-full hover:bg-green hover:text-black transition-all">
+                 
+                  <Link  onClick={() => setMobileMenuOpen(false)} to="/contact" className="text-center block bg-transparent border-2 border-green text-green  py-2 rounded-full hover:bg-green hover:text-black transition-all">
                     Schedule A Call
-                  </button>
+                  </Link>
+
                 </div>
               </div>
             </div>

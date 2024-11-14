@@ -2,12 +2,11 @@ import React, {useState, useEffect} from 'react'
 import CarrerBg from '../../assets/carrer-bg.jpg'
 import JobBg from '../../assets/IMG 2.svg'
 import Inkimos from '../../assets/IMG 5.png'
-import EnquiryBg from '../../assets/IMG 4.svg'
 import SectionHeading from '../../components/heading/Heading'
 import './carrer.css'
 import FormModel from './FormModel'
 
-const Career = () => {
+const Career = React.memo(() => {
     useEffect(()=>{
         window.scrollTo({
           top: 0,
@@ -93,6 +92,6 @@ const Career = () => {
         <FormModel open={open} setOpen={setOpen}/>
   </>
   )
-}
+});
 
 export default Career
