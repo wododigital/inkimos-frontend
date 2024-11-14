@@ -14,7 +14,7 @@ const Career = () => {
     setOpen(true);
   }
   return (<>
-        <div className="w-full min-h-[400px] md:min-h-[500px] flex items-center justify-center relative">
+        <div className="w-full min-h-[400px] md:min-h-[580px] flex items-center justify-center relative">
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{
@@ -24,7 +24,7 @@ const Career = () => {
                 <div className="absolute inset-0 bg-black opacity-50"></div>
             </div>
 
-            <div className="absolute z-10">
+            <div className="absolute">
                 <h1 className='text-[25.6px] sm:text-[40px] text-white font-semibold text-center'>
                     Join Inkimos
                 </h1>
