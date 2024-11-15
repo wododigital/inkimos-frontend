@@ -81,7 +81,9 @@ const Contact = React.memo(() => {
           formData.append('industry', data.industry);
           formData.append('details', data.message);
 
-          axios.post(`${config.baseUrl}/api/contact-us`, formData)
+          axios.post(`${config.baseUrl}/api/contact-us`, formData, {
+            withCredentials : true
+          })
           .then((res)=>{
               // console.log(res.data);
               if(res.data.status==="success"){
