@@ -55,7 +55,7 @@ const Service = () => {
               backgroundImage: `url(${BlueBg})`,
             }}
           >
-            <h2 className="text-[25px] font-normal text-white">Artificial Intelligence</h2>
+            <h2 className=" md:text-[25px] font-normal text-white">Artificial Intelligence</h2>
             <h3 className="text-[16px] font-light text-white absolute bottom-0 max-w-[60%] pb-6">
               Unlock the potential of data with cutting-edge AI and machine learning solutions that enhance
               decision-making, automate processes, and create new opportunities for growth.
@@ -150,7 +150,7 @@ const Service = () => {
 
       </section>
 
-      <section id='services' className='max-w-[1440px] mx-auto px-5 sm:px-12 py-8 lg:py-24 space-y-10 md:hidden'>
+      <section id='services' className='max-w-[1440px] mx-auto px-5 sm:px-12 py-[40px] lg:py-24 space-y-10 md:hidden'>
         {/* First Card Row */}
         <section className="flex flex-col md:flex-row justify-between  overflow-hidden space-y-6 md:space-x-6">
           {/* Left Card */}
@@ -158,8 +158,8 @@ const Service = () => {
             className="relative bg-cover bg-center w-full md:w-[627px] h-[300px] flex rounded-3xl p-6 translate-x-[-60%] transition-transform duration-500 ease-in-out animate-slide-in-left"
             style={{ backgroundImage: `url(${BlueBg})` }}
           >
-            <h2 className="text-[25px] font-normal text-white">Artificial Intelligence</h2>
-            <h3 className="text-[16px] font-light text-white absolute bottom-0 max-w-[60%] pb-6">
+            <h2 className="text-[19.2px] md:text-[25px] font-normal text-white">Artificial Intelligence</h2>
+            <h3 className=" text-[12.8px] md:text-[16px] font-light text-white absolute bottom-0 max-w-[70%] pb-6">
               Unlock the potential of data with cutting-edge AI and machine learning solutions that enhance decision-making, automate processes, and create new opportunities for growth.
             </h3>
             <Link to="/artificial-intelligence">
@@ -172,9 +172,9 @@ const Service = () => {
             className="relative bg-cover bg-center w-full md:w-[627px] h-[300px] flex rounded-3xl p-6 translate-x-[60%] transition-transform duration-500 ease-in-out animate-slide-in-right"
             style={{ backgroundImage: `url(${Cloud})` }}
           >
-            <h2 className="text-[25px] font-normal text-white max-w-[70%]">
+            <h2 className="text-[19.2px] md:text-[25px] font-normal text-white max-w-[70%]">
               Business Process Outsourcing</h2>
-            <h3 className="text-[16px] font-light text-white absolute bottom-0 max-w-[60%] pb-6">
+            <h3 className="text-[12.8px] md:text-[16px] font-light text-white absolute bottom-0 max-w-[60%] pb-6">
               Achieve greater efficiency and growth with a combination of expert consulting and tailored BPO services.
             </h3>
             <Link to="/business-process-outsourcing">
@@ -189,8 +189,8 @@ const Service = () => {
             className="relative bg-cover bg-center w-full md:w-[413px] h-[300px] flex rounded-3xl p-6 translate-x-[-60%] transition-transform duration-500 ease-in-out animate-slide-in-left border border-green"
             style={{ backgroundImage: `url(${Erp})` }}
           >
-            <h2 className="text-[25px] font-medium text-black">Cloud Computing</h2>
-            <h3 className="text-[16px] font-normal text-black absolute bottom-0 max-w-[60%] pb-6">
+            <h2 className="text-[19.2px] md:text-[25px] font-medium text-black">Cloud Computing</h2>
+            <h3 className="text-[12.8px] md:text-[16px] font-normal text-black absolute bottom-0 max-w-[60%] pb-6">
               Empower your business with secure, flexible, and future-ready cloud environments.
             </h3>
             <Link to="/cloud-computing">
@@ -202,8 +202,8 @@ const Service = () => {
             className="relative bg-cover bg-center w-full md:w-[413px] h-[300px] flex rounded-3xl p-6 transition-transform duration-1000 ease-in-out animate-fade-out animate-fade-in"
             style={{ backgroundImage: `url(${BpoGreen})` }}
           >
-            <h2 className="text-[25px] font-medium text-black">Digital Transformation</h2>
-            <h3 className="text-[16px] font-normal text-black absolute bottom-0 max-w-[80%] pb-6">
+            <h2 className="text-[19.2px] md:text-[25px] font-medium text-black">Digital Transformation</h2>
+            <h3 className="text-[12.8px] md:text-[16px] font-normal text-black absolute bottom-0 max-w-[80%] pb-6">
               Accelerate your digital journey with innovative product engineering, customer-centric experiences, and future-ready strategies.
             </h3>
             <Link to="/digital-transformation">
@@ -215,9 +215,9 @@ const Service = () => {
             className="relative bg-cover bg-center w-full md:w-[413px] h-[300px] flex rounded-3xl p-6 translate-x-[-60%] transition-transform duration-500 ease-in-out animate-slide-in-right border border-green"
             style={{ backgroundImage: `url(${Ring})` }}
           >
-            <h2 className="text-[25px] font-medium text-black">
+            <h2 className="text-[19.2px] md:text-[25px] font-medium text-black">
               Custom Software</h2>
-            <h3 className="text-[16px] font-normal text-black absolute bottom-0 max-w-[70%] pb-6">
+            <h3 className="text-[12.8px] md:text-[16px] font-normal text-black absolute bottom-0 max-w-[70%] pb-6">
               Empower your business with tailor-made software solutions that streamline operations and drive growth.
             </h3>
             <Link to="/custom-software">
@@ -232,10 +232,10 @@ const Service = () => {
             className="relative bg-cover bg-center w-full h-[300px] flex rounded-3xl p-6 translate-y-[60%] transition-transform duration-500 ease-in-out animate-slide-in-top"
             style={{ backgroundImage: `url(${Ais})` }}
           >
-            <h2 className="text-[25px] font-normal text-white max-w-[70%]">
+            <h2 className="text-[19.2px] md:text-[25px] font-normal text-white max-w-[70%]">
               Managed Services & IT Support
             </h2>
-            <h3 className="text-[16px] font-light text-white absolute bottom-0 max-w-[60%] pb-6">
+            <h3 className="text-[12.8px] md:text-[16px] font-light text-white absolute bottom-0 max-w-[60%] pb-6">
               From 24/7 support to network management and cybersecurity, we provide end-to-end managed services that keep your operations secure, efficient, and always running smoothly.
             </h3>
             <Link to="/managed-services-it-support">

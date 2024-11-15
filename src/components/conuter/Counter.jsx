@@ -28,7 +28,7 @@ const Counter = ({ targetNumber }) => {
 
   return (
     <div>
-      <h2 className='text-[48px] sm:text-[48px] text-green'>{formattedCount}+</h2> 
+      <h2 className='text-[25.6px] sm:text-[48px] text-green'>{formattedCount}+</h2> 
     </div>
   );
 };

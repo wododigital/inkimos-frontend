@@ -275,7 +275,7 @@ const Header = () => {
                     Insights
                   </Link>
                   <Link
-                    to="/career"
+                    to="/careers"
                     onClick={() => setMobileMenuOpen(false)}
                     className="-mx-3 block  px-3 py-2 text-base leading-7 text-white hover:text-green"
                   >

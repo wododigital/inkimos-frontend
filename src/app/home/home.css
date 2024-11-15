@@ -20,10 +20,10 @@
   
   @keyframes fadeOut {
     from {
-      opacity: 1; /* Start fully opaque */
+      opacity: 0; /* Start fully opaque */
     }
     to {
-      opacity: 0; /* End fully transparent */
+      opacity: 1; /* End fully transparent */
     }
   }
   
@@ -35,3 +35,15 @@
     animation: slideInTop 1.8s ease forwards;
   }
   
+  .bbg{
+    background-image:url('../../assets/IMG 4.svg') ;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+@media (max-width: 480px) {
+    .bbg {
+        background-position: right center ; 
+        background-size: 70% auto; 
+    }
+}

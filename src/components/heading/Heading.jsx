@@ -29,12 +29,12 @@ const SectionHeading = ({ mainTitle, mainClass }) => {
 
   return (
     <div className="relative">
-      <div className="max-w-[1440px] mx-auto pb-2 md:pb-[30px] relative">
+      <div className="max-w-[1440px] mx-auto pb-[10px] pt-[40px] md:pt-[98px]  md:pb-[30px] relative">
         {mainTitle && (
           <div className="relative inline-block">
             <h2
               ref={headingRef}
-              className={`font-noto text-xl md:text-[40px] font-normal md:font-medium text-black ${mainClass} 
+              className={`font-noto text-[25.6px] md:text-[40px] font-normal md:font-medium text-black ${mainClass} 
               transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}
             >
               {mainTitle}

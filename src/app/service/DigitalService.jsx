@@ -68,14 +68,16 @@ const DigitalService = () => {
   return (
     <>
       <section id="heading" className="bg-bgblue relative">
-        <div className="bg-bgblue min-h-[550px] w-full flex items-center justify-center flex-col text-center relative">
-          <img src={Digbg} alt="Circle1 image" className="absolute right-0  w-[100px] h-[225px] md:w-[200px] md:h-[300px]" />
-          <img src={Digbg1} alt="Circle2 image" className="absolute left-[-0px] md:bottom-[50px] w-[200px] bottom-0 md:w-[200px] h-auto" />
+        <div className="bg-bgblue min-h-[500px] md:min-h-[550px] w-full flex items-center justify-center flex-col text-center relative">
+          <img src={Digbg} alt="Circle1 image" className="absolute right-0  w-[100px] h-[100px] md:w-[200px] md:h-[300px] hidden md:block" />
+          <img src={Digbg} alt="Circle1 image" className="absolute right-0 top-24 w-[100px] h-[100px] md:w-[200px] md:h-[300px] md:hidden" />
+
+          <img src={Digbg1} alt="Circle2 image" className="absolute left-[-0px] md:bottom-[20px] w-[100px] bottom-0 md:w-[200px] h-auto" />
           <div className="absolute inset-0 opacity-10"></div>
           <div className="relative mt-28 flex flex-col items-center justify-center mb-10 md:mb-20 px-4">
-            <h1 className="text-[24px] md:text-[36px] lg:text-[48px] font-medium text-white animate-slide-in max-w-[1000px]">
+            <h1 className="text-[25.6px] md:text-[48px] font-medium text-white animate-slide-in max-w-[1000px]">
               Driving Business Evolution Through Digital Innovation      </h1>
-            <h2 className="text-sm md:text-base font-light text-white max-w-md md:max-w-2xl lg:max-w-4xl mt-4 animate-slide-in">
+            <h2 className="text-[14.4px] sm:text-base font-light text-white max-w-md md:max-w-2xl lg:max-w-4xl mt-4 animate-slide-in">
               Accelerate your digital journey with innovative product engineering, customer-centric experiences, and future-ready strategies. We help you evolve and stay ahead in a rapidly changing world.      </h2>
           </div>
         </div>
@@ -83,7 +85,7 @@ const DigitalService = () => {
 
 
       {/* Cards section with slight overlap and rounded top corners */}
-      <div className="relative z-[5] -mt-16 rounded-t-[72px] overflow-hidden">
+      <div className="relative z-[5] -mt-16 rounded-[50px] md:rounded-t-[72px] overflow-hidden">
         <Cards cardData={cardData} />
       </div>
       <Partner />

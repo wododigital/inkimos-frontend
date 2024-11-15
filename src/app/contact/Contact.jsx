@@ -120,22 +120,22 @@ const Contact = React.memo(() => {
         }}
       >
         <img src={Arrow} alt='arrow' className='absolute bottom-[-48px] md:bottom-[-160px] right-0 w-[50px] h-[100px] md:w-[154px] md:h-[344px] z-10' />
-        <section className="max-w-[1440px] mx-auto px-5 sm:px-12 mt-10">
+        <section className="max-w-[1440px] mx-auto px-5 sm:px-12 mt-10 py-[40px] md:py-12 ">
           <div className="z-10 text-white flex flex-col md:flex-row gap-4">
             {/* Column 1 - Text */}
-            <div className="flex-1 flex flex-col items-start space-y-4 md:space-y-8">
+            <div className="flex-1 flex flex-col items-start space-y-4 md:space-y-8 ">
               <div>
                 <img src={Inkimos} alt="inkimos icon" className="w-12 h-2" />
               </div>
 
               <div>
-                <h1 className="text-[28px] md:text-[40px] text-white font-semibold">
+                <h1 className="text-[25.6px] md:text-[40px] text-white font-semibold">
                   Implement Your Ultimate Technological Solutions!
                 </h1>
               </div>
 
               <div>
-                <h2 className="text-sm md:text-base text-white">
+                <h2 className="text-base text-white">
                   You are one step away from taking a leap of growth, with Inkimos’ range of services across various domains. Reach out to us for more information!
                 </h2>
               </div>
@@ -162,7 +162,7 @@ const Contact = React.memo(() => {
             </div>
 
             {/* Column 2 - Form */}
-            <div className="flex-1 flex flex-col bg-grey bg-opacity-55 backdrop-blur-lg p-6 md:p-12 rounded-xl">
+            <div className="flex-1 flex flex-col bg-grey bg-opacity-55 backdrop-blur-lg p-6 md:p-12 rounded-xl ">
               <form  onSubmit={formHandler}>
                 <div className='py-3'>
                   <input
@@ -245,7 +245,7 @@ const Contact = React.memo(() => {
       </div>
 
       {/* Map Section */}
-      <section className="map-container max-w-[1440px] mx-auto px-5 sm:px-12 py-8 lg:py-24">
+      <section className="map-container max-w-[1440px] mx-auto px-5 sm:px-12 pt-[40px] lg:pt-24">
         <iframe
           title="Google Map"
           width="100%"
@@ -259,7 +259,7 @@ const Contact = React.memo(() => {
       </section>
 
       {/* Global Operations Section */}
-      <section className="max-w-[1440px] mx-auto px-5 sm:px-12 pb-8 lg:pb-24">
+      <section className="max-w-[1440px] mx-auto px-5 sm:px-12 pb-[40px] lg:pb-24">
         <SectionHeading mainTitle="Our Global Operations" />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-8">
