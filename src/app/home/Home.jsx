@@ -19,6 +19,7 @@ import Service3 from '../../assets/Layer 1.png'
 import Counterhome from '../../components/conuter/Counterhome';
 import SectionHeading from '../../components/heading/Heading';
 import BlogCards from '../blog/Blogcards';
+import './home.css'
 
 const Home = React.memo(() => {
   useEffect(() => {
@@ -27,8 +28,8 @@ const Home = React.memo(() => {
       behavior: "smooth",
     });
   }, [])
-  const scrollIcon = useRef(null); // Ref to target container
-  const animationInstance = useRef(null); // Ref to hold the animation instance
+  const scrollIcon = useRef(null); 
+  const animationInstance = useRef(null); 
   const imageSectionRef = useRef(null);
 
   useEffect(() => {
@@ -82,7 +83,7 @@ const Home = React.memo(() => {
         'Transform your infrastructure with secure, flexible cloud environments.',
       mainImage: Home1,
       secondaryImage: Inkimos,
-      link: '/cloud-computing',
+      link: '/our-services/cloud-computing',
     },
     {
       title: 'AI & Machine Learning',
@@ -90,7 +91,7 @@ const Home = React.memo(() => {
         'Leverage AI to automate processes and unlock new insights for your business.',
       mainImage: Home2,
       secondaryImage: Inkimos,
-      link: '/artificial-intelligence',
+      link: '/our-services/artificial-intelligence',
 
     },
     {
@@ -99,7 +100,7 @@ const Home = React.memo(() => {
         'Developing tailored solutions that streamline operations and enhance productivity.',
       mainImage: Home3,
       secondaryImage: Inkimos,
-      link: '/custom-software',
+      link: '/our-services/custom-software',
 
     },
     {
@@ -108,7 +109,7 @@ const Home = React.memo(() => {
         'Drive efficiency and cost-effectiveness through strategic outsourcing and consulting.',
       mainImage: Home4,
       secondaryImage: Inkimos,
-      link: '/business-process-outsourcing',
+      link: '/our-services/business-process-outsourcing',
     },
     {
       title: 'Digital Transformation',
@@ -116,7 +117,7 @@ const Home = React.memo(() => {
         'Empowering your business with innovative digital solutions for sustainable growth.',
       mainImage: Home5,
       secondaryImage: Inkimos,
-      link: '/digital-transformation',
+      link: '/our-services/digital-transformation',
     },
     {
       title: 'Managed Services & IT Support',
@@ -124,7 +125,7 @@ const Home = React.memo(() => {
         "Round-the-clock support to ensure business continuity and IT excellence",
       mainImage: Home6,
       secondaryImage: Inkimos,
-      link: '/managed-services-it-support'
+      link: '/our-services/managed-services-it-support'
     },
   ];
 
@@ -151,7 +152,7 @@ const Home = React.memo(() => {
               id="scroll-icon"
               ref={scrollIcon}
               style={{ width: "150px", height: "150px" }}
-              className="mx-auto mt-10 md:mt-20 anim"
+              className="mx-auto mt-10 md:mt-20 animate-fade-out"
             ></div>
           </div>
         </div>
@@ -168,7 +169,7 @@ const Home = React.memo(() => {
         </div>
       </section>
 
-      <section id='solution' className='max-w-[1440px] mx-auto px-5 lg:px-12 pt-8 lg:pt-24 space-y-10 hidden md:block'>
+      <section id='solution' className='max-w-[1440px] mx-auto px-5 lg:px-12 pt-8 lg:pt-24 pb-[66px] md:pb-[0px] space-y-10 hidden md:block'>
 
         <section className="flex justify-between overflow-hidden space-x-6">
           {/* Left Card */}
@@ -183,7 +184,9 @@ const Home = React.memo(() => {
               Unlock the potential of data with cutting-edge AI and machine learning solutions that enhance
               decision-making, automate processes, and create new opportunities for growth.
             </h3>
+            <Link to="/industry-expertise">
             <FaArrowCircleRight className="absolute right-7 bottom-7 w-8 h-8 text-arrowBlue cursor-pointer" />
+            </Link>
           </div>
 
           {/* Right Card */}
@@ -221,7 +224,7 @@ const Home = React.memo(() => {
             style={{ backgroundImage: `url(${Service3})` }}
           >
 
-            <h2 className="text-[16px] font-normal text-black absolute top-6 max-w-[85%] text-center pb-6">
+            <h2 className="text-[16px] font-normal text-black absolute top-6 max-w-[90%] text-center pb-6">
               "Empowering organizations with strategic technology and seamless digital integration, enabling innovation and operational excellence for sustainable success."</h2>
             <h3 className='font-bold text-[16px] absolute left-40 bottom-32'>Inkimos by Invenger </h3>
 
@@ -250,81 +253,94 @@ const Home = React.memo(() => {
 
       </section>
 
-      <section id='solution' className='max-w-[1440px] mx-auto px-5 lg:px-12 py-8 lg:py-24 space-y-10 md:hidden'>
+      <section id='solution' className='max-w-[1440px] mx-auto px-[10px] lg:px-12  lg:py-24 space-y-5 md:hidden'>
+        <SectionHeading mainTitle="Why Choose Inkimos."/>
 
-        <section className="flex flex-col lg:flex-row justify-between  overflow-hidden space-y-10 lg:space-y-0 lg:space-x-6">
+        <section className="flex flex-col lg:flex-row justify-between  overflow-hidden space-y-5 lg:space-y-0 lg:space-x-6">
 
           {/* Left Card */}
           <div
-            className="relative bg-cover bg-center w-full lg:w-[441px] h-[250px] flex rounded-3xl p-2 translate-x-[-60%] transition-transform duration-500 ease-in-out animate-slide-in-left bg-green"
+            className="relative bg-cover bg-center w-full lg:w-[441px] h-[250px] flex rounded-3xl p-[10px] translate-x-[-60%] transition-transform duration-500 ease-in-out animate-slide-in-left bg-green"
           >
             <img src={Service1} alt='Service I' className='absolute right-0 w-48 h-48 bottom-0' />
-            <h2 className="text-[40px] font-normal text-white bottom-0 absolute p-4">Our Expertise</h2>
+            <h2 className="text-[25px]  font-normal text-white bottom-0 absolute p-4">Our Expertise</h2>
             <h3 className="text-[16px] font-light text-white absolute top-4 p-4">
               Unlock the potential of data with cutting-edge AI and machine learning solutions that enhance
               decision-making, automate processes, and create new opportunities for growth.
             </h3>
-            <FaArrowCircleRight className="absolute right-7 bottom-7 w-8 h-8 text-arrowBlue cursor-pointer" />
+            <Link to="/industry-expertise">
+            <FaArrowCircleRight className="absolute right-7 bottom-5 md:bottom-7 w-8 h-8 text-arrowBlue cursor-pointer" />
+            </Link>
           </div>
 
           {/* Right Card */}
           <div
-            className="relative bg-cover bg-center w-full lg:w-[881px] h-[250px] flex rounded-3xl p-6 translate-x-[60%] transition-transform duration-500 ease-in-out animate-slide-in-right bg-dblue"
+            className="relative bg-cover bg-center w-full lg:w-[881px] h-[250px] flex rounded-3xl p-[10px] translate-x-[60%] transition-transform duration-500 ease-in-out animate-slide-in-right bg-dblue"
           >
-            <h2 className="text-[40px] font-normal text-white">Solution</h2>
-            <h3 className="text-[16px] font-light text-white absolute bottom-0 max-w-[60%] pb-6 z-10">
+            <h2 className="text-[25.6px] font-normal text-white p-4">Solution</h2>
+            <h3 className="text-[16px] font-light text-white absolute bottom-0 max-w-[70%] p-4 z-10">
               See how we craft tailored solutions that transform your business from the inside out
             </h3>
             <img src={Service2} alt='service 2' className='absolute right-0 top-20 w-40 h-40' />
-            <div className="absolute inset-0 bg-black opacity-10"></div>
-            <img src={Inkimos} alt='Inkimos' className='w-12 h-2 absolute right-10 bottom-10' />
+            <Link to="/our-services">
+            <img src={Inkimos} alt='Inkimos' className='w-12 h-2 absolute right-5 md:right-10 bottom-5 md:bottom-10' />
+            </Link>
           </div>
         </section>
 
         <section className='flex flex-col lg:flex-row justify-between  overflow-hidden space-y-10 lg:space-y-0'>
           {/* Left Card with Counter */}
-          <div className="relative bg-cover bg-center w-full lg:w-[372px] h-[100px] flex rounded-3xl p-6 translate-x-[-60%] transition-transform duration-500 ease-in-out animate-slide-in-left bg-dblue">
-            <div className="flex items-center space-x-2 mt-0 absolute left-32 pb-8 text-medium">
-              <h2 className="font-medium text-[40px] text-arrowBlue">$</h2>
-              <h2 className="font-medium text-[40px] text-arrowBlue">
+          <div className="relative bg-cover bg-center w-full lg:w-[372px] h-[100px] flex items-center justify-center rounded-3xl p-6 translate-x-[-60%] transition-transform duration-500 ease-in-out animate-slide-in-left bg-dblue">
+          <div className="relative bg-cover bg-center w-full lg:w-[372px] h-[100px] flex flex-col items-center justify-center rounded-3xl p-6 translate-x-[-60%] transition-transform duration-500 ease-in-out animate-slide-in-left bg-dblue">
+            <div className="flex items-center mt-1">
+              <h2 className="font-medium text-[32px] text-arrowBlue">$</h2>
+              <h2 className="font-medium text-[20px] text-arrowBlue">
                 <Counterhome targetNumber={450} />
               </h2>
-              <h2 className="font-medium text-[40px] text-arrowBlue">M</h2>
+              <h2 className="font-medium text-[32px] text-arrowBlue">M</h2>
             </div>
-            <h3 className="text-[19px] font-normal text-white absolute max-w-[60%] pb-6 mt-32 left-28">
+            <h3 className="text-[16px] font-normal text-white  text-center mb-2">
               Revenue Uplift
             </h3>
           </div>
 
+        </div>
+
+
           {/* Right Card with Image */}
           <div
-            className="relative bg-contain bg-no-repeat bg-bottom w-full lg:w-[496px] h-[250px] flex rounded-3xl p-6 transition-transform duration-1000 ease-in-out animate-fade-out border border-green"
-            style={{ backgroundImage: `url(${Service3})` }}
-          >
-            <h2 className="text-[16px] font-normal text-black absolute top-6 max-w-[85%] text-center pb-6">
-              "Empowering organizations with strategic technology and seamless digital integration, enabling innovation and operational excellence for sustainable success."
-            </h2>
-            <h3 className='font-bold text-[16px] absolute left-32 bottom-24'>Inkimos by Invenger</h3>
-          </div>
+          className="relative bg-contain bg-no-repeat bg-bottom w-full lg:w-[496px] h-[250px] flex flex-col items-center justify-start rounded-3xl pt-[10px] px-4 transition-transform duration-1000 ease-in-out animate-fade-out border border-green"
+          style={{ backgroundImage: `url(${Service3})` }}
+        >
+          <h2 className="text-[16px] font-normal text-black max-w-[85%] text-center  mb-2">
+            "Empowering organizations with strategic technology and seamless digital integration, enabling innovation and operational excellence for sustainable success."
+          </h2>
+          <h3 className="font-bold text-[16px] text-center">
+            Inkimos by Invenger
+          </h3>
+        </div>
+
+
 
           {/* Left Card with Counter */}
-          <div className="relative bg-cover bg-center w-full lg:w-[372px] h-[100px] flex rounded-3xl  translate-x-[60%] transition-transform duration-500 ease-in-out animate-slide-in-right bg-arrowBlue">
-            <div className="flex items-center space-x-2 absolute left-32 top-2">
-              <h2>
-                <Counterhome targetNumber={25} color="text-white" />
-              </h2>
-              <h2 className="text-white text-[40px] sm:text-[48px]">Years</h2>
-            </div>
-            <h3 className="text-[19px] font-normal text-white absolute max-w-[60%] pb-6 mt-14 left-[120px]">
-              of Industry Expertise
-            </h3>
+          <div className="relative bg-cover bg-center w-full lg:w-[372px] h-[100px] flex flex-col items-center justify-center rounded-3xl translate-x-[60%] transition-transform duration-500 ease-in-out animate-slide-in-right bg-arrowBlue p-4">
+          <div className="flex items-center space-x-2">
+            <h2 className="text-white text-[32px] sm:text-[48px]">
+              <Counterhome targetNumber={25} color='text-white' />
+            </h2>
+            <h2 className="text-white text-[32px] sm:text-[48px]">Years</h2>
           </div>
+          <h3 className="text-[16px] font-normal text-white text-center ">
+            of Industry Expertise
+          </h3>
+        </div>
+
 
         </section>
 
       </section>
 
-      <section id='Insights' className='max-w-[1440px] mx-auto px-5 sm:px-12 py-8 lg:py-24 space-y-10'>
+      <section id='Insights' className='max-w-[1440px] mx-auto px-5 sm:px-12 pb-8 lg:pb-24 space-y-10'>
         <SectionHeading mainTitle="Navigating change. Our insights" />
         <BlogCards />
       </section>
@@ -332,16 +348,16 @@ const Home = React.memo(() => {
       <section
         id="image"
         ref={imageSectionRef}
-        className="relative h-[40vh] sm:h-[65vh] bg-cover bg-center opacity-0 transition-opacity duration-1000"
+        className="relative h-[75vh] sm:h-[65vh] bg-cover bg-center opacity-0 transition-opacity duration-1000"
         style={{ backgroundImage: `url(${Office})` }}
       >
-        <div className="max-w-[1440px] mx-auto h-full flex items-center  px-5 lg:px-12">
-          <div className="bg-white w-[90%] sm:w-[450px] h-auto p-4 sm:p-6 rounded-3xl">
-            <h2 className="text-[24px] sm:text-[40px] font-medium text-dblue">Global Impact</h2>
+        <div className="max-w-[1440px] mx-auto h-full flex   items-center  px-5 lg:px-12">
+          <div className="bg-white w-[90%] sm:w-[450px] h-auto p-[20px] sm:p-6 rounded-3xl absolute top-52 md:top-auto">
+            <h2 className="text-[25.6px] sm:text-[40px] font-medium text-dblue">Global Impact</h2>
             <p className="text-base text-aboutgrey font-normal">
               For 20+ years, we’ve been solving challenges at the intersection of business and technology to deliver value for businesses, people, and communities around the world.
             </p>
-            <a href="/about" className="text-dblue flex items-center text-base font-medium pt-4">
+            <a href="/about" className="text-dblue flex items-center text-base font-medium py-4">
               Discover Inkimos
               <img src={Inkimos} alt="Inkimos Logo" className="ml-2 inline-block w-8 h-1.5 mt-1" />
             </a>

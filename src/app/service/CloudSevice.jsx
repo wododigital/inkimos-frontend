@@ -68,15 +68,15 @@ const AiService = () => {
   return (
     <>
       <section id="heading" className="bg-bgblue relative">
-        <div className="bg-bgblue min-h-[550px] w-full flex items-center justify-center flex-col text-center relative">
+        <div className="bg-bgblue min-h-[500px] md:min-h-[550px] w-full flex items-center justify-center flex-col text-center relative">
           <img src={Cbg1} alt="Circle1 image" className="absolute right-0 w-[100px] h-[225px] md:w-[200px] md:h-[450px]" />
           <img src={Cbg} alt="Circle2 image" className="absolute left-[-0px] md:bottom-[-50px] w-[200px] bottom-0 md:w-[500px] h-auto" />
           <div className="absolute inset-0 bg-blue-950 opacity-20"></div>
           <div className="relative flex flex-col items-center justify-center px-4">
-            <h1 className="text-[24px] md:text-[36px] lg:text-[48px] font-medium text-white animate-slide-in max-w-[1000px]">
+            <h1 className="text-[25.6px] md:text-[48px] font-medium text-white animate-slide-in max-w-[1000px]">
               Scalable, Secure, and Strategic Cloud Solutions for Modern Business
             </h1>
-            <h2 className="text-sm md:text-base font-light text-white max-w-md md:max-w-2xl lg:max-w-4xl mt-4 animate-slide-in">
+            <h2 className="text-[14.4px] sm:text-base font-light text-white max-w-md md:max-w-2xl lg:max-w-4xl mt-4 animate-slide-in">
               Empower your business with secure, flexible, and future-ready cloud environments. From seamless migration to multi-cloud management, we deliver customized cloud solutions that optimize performance and ensure business continuity.
             </h2>
           </div>
@@ -84,7 +84,7 @@ const AiService = () => {
       </section>
 
       {/* Cards section with slight overlap and rounded top corners */}
-      <div className="relative z-[5] -mt-16 rounded-t-[72px] overflow-hidden">
+      <div className="relative z-[5] -mt-16 rounded-[50px] md:rounded overflow-hidden">
         <Cards cardData={cardData} />
       </div>
       <Partner />

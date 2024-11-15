@@ -28,7 +28,7 @@ const Counterhome = ({ targetNumber,color = 'text-arrowBlue' }) => {
 
   return (
     <div>
-<h2 className={`${color} text-[40px] sm:text-[48px]`}>{formattedCount}</h2>     </div>
+<h2 className={`${color} text-[32px] sm:text-[48px]`}>{formattedCount}</h2>     </div>
   );
 };
 

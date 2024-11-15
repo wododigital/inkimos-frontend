@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import realestate from '../../assets/Real-Estate-Inkimos-Industry-Focus-2.jpg';
 import automotive from '../../assets/Inkimos-Automotive-Industry-Focus-1024x585.jpg';
 import manufacturing from '../../assets/Inkimos-Manufacturing-Image-1024x585.jpg';
@@ -53,45 +54,53 @@ const IndustryExperts = React.memo(() => {
         <div className="absolute inset-0 bg-[url('./assets/Inkimos-BG-Who-we-are-2.jpg')] bg-cover bg-bottom opacity-50"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"> 
             <div className='max-w-[1440px] mx-auto px-5 sm:px-12 pt-10'>
-            <h1 className="text-[26px] sm:text-[32px] md:text-[40px] text-white mb-2 font-semibold">
+            <h1 className="text-[25.6px] sm:text-[32px] md:text-[40px] text-white mb-2 font-semibold">
             Transforming ERP Industry Digital Landscapes
             </h1>
-            <h2 className="text-[16px] sm:text-[18px] lg:text-base text-white lg:w-[60%] mx-auto">
+            <h2 className="text-[14.4px] sm:text-[18px] lg:text-base text-white lg:w-[60%] mx-auto">
                 At Inkimos, we go beyond a technology partner; we understand the unique challenges of different industries. From optimizing supply chains to enhancing financial services with AI, we provide tailored solutions to equip you with insights to excel in today's digital landscape.
             </h2>
             </div>
         </div>  
       </div>
 
-      <section  className="max-w-[1440px] mx-auto px-5 lm:px-12">
-        <div className="grid grid-cols-1 gap-8 py-10">
-            {industries.map((industry, index) => (
-                <div className="" key={index}>
-                    <div className={`flex gap-8 items-center bg-white rounded-3xl overflow-hidden border-2 border-green ${
-                        index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                    }`}>
-                        <div className="flex-1 min-w-[50%]">
-                            <img 
-                                src={industry.image}
-                                alt={industry.title}
-                                className="w-full h-[50vh] object-cover"
-                            />
-                        </div>
-                        <div className="flex-1 relative px-10">
-                            <div className="w-10 py-5"><img src={logo} alt='logo'/></div>
-                            <h1 className="text-4xl font-bold text-[#1a1a1a] mb-6">{industry.title}</h1>
-                            <p className="text-[#4a4a4a] leading-relaxed mb-8">
-                                {industry.description}
-                            </p>
-                            <button className="bg-secondary text-white bg-green px-6 py-3 rounded-full text-base hover:bg-secondary-dark transition-colors duration-300">
-                                Get in Touch
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            ))}
+      <section className="max-w-[1440px] mx-auto px-5 lm:px-12">
+  <div className="grid grid-cols-1 gap-5 md:gap-8 py-10 md:py-[100px]">
+    {industries.map((industry, index) => (
+      <div className="" key={index}>
+        <div
+          className={`flex flex-col md:gap-8 items-center bg-white rounded-3xl overflow-hidden border-2 border-green ${
+            index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+          }`}
+        >
+          <div className="flex-1 w-full">
+            <img
+              src={industry.image}
+              alt={industry.title}
+              className="w-full h-auto md:min-h-[450px] object-cover"
+            />
+          </div>
+
+          <div className="flex-1 relative px-[10px] md:px-10">
+            <div className="w-10 py-[10px] md:py-5">
+              <img src={logo} alt="logo" />
+            </div>
+            <h1 className="text-[32px] md:text-[48px] font-medium text-[#1a1a1a] mb-[10px] md:mb-[20px]">{industry.title}</h1>
+            <p className="text-[#4a4a4a] text-[14.4px]  md:text-base leading-relaxed mb-8 md:mb-12">
+              {industry.description}
+            </p>
+            <Link to="/contact">
+            <button className="bg-secondary text-white bg-green px-6 py-3 rounded-full text-base hover:bg-secondary-dark transition-colors duration-300 mb-[10px] md:mb-[20px]">
+              Get in Touch
+            </button>
+            </Link>
+          </div>
         </div>
-      </section>
+      </div>
+    ))}
+  </div>
+</section>
+
 
       <PartnerService/>
     </>

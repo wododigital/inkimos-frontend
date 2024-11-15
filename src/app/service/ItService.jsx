@@ -67,20 +67,20 @@ const ItService = () => {
   return (
     <>
       <section id="heading" className="bg-bgblue relative">
-        <div className="bg-bgblue min-h-[550px] w-full flex items-center justify-center flex-col text-center relative">
+        <div className="bg-bgblue min-h-[500px] md:min-h-[550px] w-full flex items-center justify-center flex-col text-center relative">
           <img src={Itbg} alt="Circle1 image" className="absolute right-0 top-40 w-[100px] h-[150px] md:w-[190px] md:h-[200px]" />
           <div className="absolute inset-0 bg-blue-950 opacity-20"></div>
           <div className="relative mt-28 flex flex-col items-center justify-center mb-10 md:mb-20 px-4">
-            <h1 className="text-[24px] md:text-[36px] lg:text-[48px] font-medium text-white animate-slide-in max-w-[1000px]">
+            <h1 className="text-[25.6px] md:text-[48px] font-medium text-white animate-slide-in max-w-[1000px]">
               Seamless Operations with End-to-End IT Solutions   </h1>
-            <h2 className="text-sm md:text-base font-light text-white max-w-md md:max-w-2xl lg:max-w-4xl mt-4 animate-slide-in">
+            <h2 className="text-[14.4px] sm:text-base font-light text-white max-w-md md:max-w-2xl lg:max-w-4xl mt-4 animate-slide-in">
               From 24/7 support to network management and cybersecurity, we provide end-to-end managed services that keep your operations secure, efficient, and always running smoothly.         </h2>
           </div>
         </div>
       </section>
 
       {/* Cards section with slight overlap and rounded top corners */}
-      <div className="relative z-[5] -mt-16 rounded-t-[72px] overflow-hidden">
+      <div className="relative z-[5] -mt-16 rounded-[50px] md:rounded-t-[72px] overflow-hidden">
         <Cards cardData={cardData} />
       </div>
       <Partner />

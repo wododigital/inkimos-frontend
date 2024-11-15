@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
+import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react'
 import { XMarkIcon  } from '@heroicons/react/24/outline'
 import axios from 'axios';
 import config from '../../config';
@@ -106,7 +106,7 @@ const FormModel = React.memo(({open, setOpen}) => {
             <div className="flex min-h-full items-center justify-center p-4 text-center  sm:p-0">
                 <DialogPanel
                 transition
-                className="relative transform overflow-hidden text-left rounded-md shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-full sm:max-w-lg data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
+                className="relative transform overflow-hidden text-left rounded-2xl shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-full sm:max-w-lg data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
                 >
                 <div className="relative bg-[url('./assets/Inkimos-BG-Who-we-are-2.jpg')] bg-cover bg-center px-4 pb-4 pt-5 sm:p-6 sm:pb-4 ">
                     <div className="absolute inset-0 bg-black/10 backdrop-blur-sm"></div>
