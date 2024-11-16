@@ -130,7 +130,12 @@ const Career = React.memo(() => {
               </div>
             ))
           ) : (
-            'empty'
+            <div className="flex items-center justify-center min-h-screen px-4">
+            <h2 className="text-black text-center text-base sm:text-lg">
+              Currently, no job openings.
+            </h2>
+          </div>
+          
           )}
 
         </div>
