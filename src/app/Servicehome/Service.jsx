@@ -28,15 +28,15 @@ const Service = () => {
     <>
       <section
         id="head"
-        className="relative h-[500px] flex items-center justify-center text-center bg-cover bg-bottom"
+        className="relative h-[370px] md:h-[500px] flex items-center justify-center text-center bg-cover bg-bottom"
         style={{
           backgroundImage: `url(${InkimosBg})`,
         }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-          <h1 className="text-2xl md:text-[40px] font-medium mb-6 text-white">
+        <div className="absolute mt-24 md:mt-0 inset-0 flex flex-col items-center justify-center text-center px-4">
+          <h1 className="text-2xl md:text-[40px] font-medium mb-2 md:mb-6 text-white">
             Our Services
           </h1>
           <p className="text-[16px] sm:text-[18px] md:text-[19px] text-white lg:w-[35%]">
