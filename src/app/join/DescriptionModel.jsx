@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react'
-import { XMarkIcon  } from '@heroicons/react/24/outline'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 
 const DescriptionModal = React.memo(({ open, setOpen, htmlContent }) => {
   return (
@@ -14,7 +14,7 @@ const DescriptionModal = React.memo(({ open, setOpen, htmlContent }) => {
         <div className="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
           <DialogPanel
             transition
-            className="relative transform overflow-hidden text-left rounded-md shadow-xl transition-all"
+            className="relative transform overflow-hidden text-left rounded-2xl shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-full sm:max-w-4xl data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95 "
           >
             <div className="relative bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
               <div className="absolute inset-0 bg-gray-100"></div>
@@ -26,10 +26,10 @@ const DescriptionModal = React.memo(({ open, setOpen, htmlContent }) => {
                     onClick={() => setOpen(false)}
                   />
                 </div>
-                <div className="mt-3 px-5">
+                <div className="mt-3 px-5 max-h-[500px] overflow-x-auto">
                   {/* Using dangerouslySetInnerHTML to inject HTML content */}
                   <div
-                    className="text-sm text-gray-700 list-disc"
+                    className="text-sm text-gray-700 description"
                     dangerouslySetInnerHTML={{ __html: htmlContent }}
                   ></div>
 

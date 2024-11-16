@@ -137,7 +137,7 @@ const Home = React.memo(() => {
         style={{ backgroundImage: `url(${HomeBg})` }}
       >
         <div className="absolute inset-0 flex items-end justify-center ">
-          <div className="text-white text-center px-4 pb-28">
+          <div className="text-white text-center px-4 pb-32 sm:pb-0 4xl:pb-28">
             <h1 className="text-[25px] md:text-[38px] font-medium animate-slide-in-top">
               Don’t Let Change Happen to You. Make It Work for You<br />—With Inkimos
             </h1>

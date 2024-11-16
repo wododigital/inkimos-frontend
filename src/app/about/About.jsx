@@ -93,17 +93,21 @@ const About = React.memo(() => {
   return (
     <>
       <div className="relative w-full min-h-[400px] md:min-h-[500px] bg-dblack flex lg:items-end justify-center">
-        <video
-          src={AboutBg}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="relative w-full md:w-[60%] max-h-[400px] "
-          style={{
-            height: 'auto',
-          }}
-        />
+      <video
+        src={AboutBg}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        className="relative w-full md:w-[60%] max-h-[400px]"
+        style={{
+          height: 'auto',
+        }}
+      >
+        <source src={AboutBg} type="video/mp4" />
+        {/* Your browser does not support the video tag. */}
+      </video>
         <div className="absolute inset-0 bg-black opacity-50"></div>
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">

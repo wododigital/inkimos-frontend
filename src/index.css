@@ -50,4 +50,21 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
-  
+ 
+
+.description ul {
+  list-style-type: disc;
+  padding-left: 1.25rem; /* Matches Tailwind's `pl-5` */
+}
+.description ul li {
+  margin-top: 0.5rem; 
+}
+
+.description h2, h3 {
+  font-weight:700;
+  margin : 10px 0;
+}
+
+.description p{
+  margin : 15px 0;
+}

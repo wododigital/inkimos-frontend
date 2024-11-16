@@ -28,9 +28,12 @@ const Partner = () => {
             autoPlay
             muted
             loop
+             playsInline
+             preload="auto"
+             src={Globe}
           >
             <source src={Globe} type="video/mp4" />
-            Your browser does not support the video tag.
+            {/* Your browser does not support the video tag. */}
           </video>
           <div className="absolute inset-0 bg-black opacity-25"></div>
 
