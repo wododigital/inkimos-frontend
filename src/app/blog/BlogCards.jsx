@@ -129,7 +129,7 @@ const BlogCards = () => {
                 key={index}
                 onClick={() => setCurrentIndexMobile(index)}
                 className={`cursor-pointer w-3 h-3 rounded-full ${
-                  currentIndexMobile === index ? 'bg-green' : 'bg-opacity-50'
+                  currentIndexMobile === index ? 'bg-green' : 'bg-lightGrey'
                 }`}
               ></span>
             ))}
