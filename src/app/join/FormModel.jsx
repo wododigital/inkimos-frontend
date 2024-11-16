@@ -5,13 +5,13 @@ import axios from 'axios';
 import config from '../../config';
 
 const FormModel = React.memo(({ open, setOpen, details }) => {
-    console.log(details);
+    // console.log(details);
     const [data, setData] = useState({
         fullName: '',
         phoneNumber: '',
         email: '',
         linkedInUrl: '',
-        role: details.code,
+        role: '',
         resume: ''
     });
 
@@ -191,7 +191,8 @@ const FormModel = React.memo(({ open, setOpen, details }) => {
                                                         onChange={inputHandler}
                                                         value={data.role}
                                                     >
-                                                        <option value={details.code} selected>{details.title}</option>
+                                                        <option value='' disabled>Select</option>
+                                                        <option value={details.code} >{details.title}</option>
                                                     </select>
                                                    
                                                 </div>
