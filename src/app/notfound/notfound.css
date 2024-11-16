@@ -1,0 +1,14 @@
+@keyframes shadow {
+    0%, 100% {
+      transform: translateX(-50%) scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateX(-50%) scale(0.85);
+      opacity: 0.2;
+    }
+  }
+
+.animate-shadow {
+    animation: shadow 3s ease-in-out infinite;
+  }
