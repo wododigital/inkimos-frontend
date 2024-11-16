@@ -98,7 +98,7 @@ const Career = React.memo(() => {
     <section className="max-w-[1440px] mx-auto px-5  sm:px-12  pb-[40px] lg:pb-24  ">
       <section id="job">
         <SectionHeading mainTitle="Job Openings." />
-        <div className="flex flex-col md:flex-row gap-4 sm:gap-9">
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-9 md:mt-[30px]">
           <div
             className="w-full md:w-1/2 h-[270px] md:h-[360px] bg-cover bg-center bg-white border border-green rounded-3xl "
             style={{ backgroundImage: `url(${JobBg})` }}

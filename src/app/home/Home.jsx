@@ -12,6 +12,7 @@ import Home3 from '../../assets/AppWindow.png';
 import Home4 from '../../assets/Group 73.png';
 import Home5 from '../../assets/Group 74.png';
 import Home6 from '../../assets/ChalkboardTeacher.png';
+import Home7 from '../../assets/Frame 133.png';
 import { FaArrowCircleRight } from "react-icons/fa";
 import Service1 from '../../assets/Frame 131.png';
 import Service2 from '../../assets/Frame 132.png';
@@ -224,7 +225,7 @@ const Home = React.memo(() => {
 
             <h2 className="text-[16px] font-normal text-black absolute top-6 max-w-[90%] text-center pb-6">
               "Empowering organizations with strategic technology and seamless digital integration, enabling innovation and operational excellence for sustainable success."</h2>
-            <h3 className='font-bold text-[16px] absolute left-40 bottom-32'>Inkimos by Invenger </h3>
+            <h3 className='font-bold text-[16px] absolute left-40 bottom-28'>Inkimos by Invenger </h3>
 
           </div>
 
@@ -232,7 +233,7 @@ const Home = React.memo(() => {
 
 
           <div className=' className="relative bg-cover bg-center w-[372px] h-[250px] flex rounded-3xl p-6  translate-x-[60%] transition-transform duration-500 ease-in-out animate-slide-in-right bg-arrowBlue' >
-            <div className="flex items-center space-x-2 absolute left-24 top-20"> {/* Added flex and space-x-2 for spacing */}
+            <div className="flex items-center space-x-2 absolute left-24 top-20"> 
               <h2>
                 <Counterhome targetNumber={25} color="text-white" />
               </h2>
@@ -338,7 +339,7 @@ const Home = React.memo(() => {
 
       </section>
 
-      <section id='Insights' className='max-w-[1440px] mx-auto px-5 sm:px-12 pb-8 lg:pb-24 space-y-10'>
+      <section id='Insights' className='max-w-[1440px] mx-auto px-5 sm:px-12 pb-8 lg:pb-24 space-y-[15px]'>
         <SectionHeading mainTitle="Navigating change. Our insights" />
         <BlogCards />
       </section>

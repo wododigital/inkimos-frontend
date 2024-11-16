@@ -29,7 +29,7 @@ const SectionHeading = ({ mainTitle, mainClass }) => {
 
   return (
     <div className="relative">
-      <div className="max-w-[1440px] mx-auto pb-[10px] pt-[40px] md:pt-[98px]  md:pb-[30px] relative">
+      <div className="max-w-[1440px] mx-auto pt-[40px] md:pt-[98px]  md:pb-[0px] relative">
         {mainTitle && (
           <div className="relative inline-block">
             <h2

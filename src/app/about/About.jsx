@@ -197,7 +197,7 @@ const About = React.memo(() => {
 
       {/* Mobile Challenges Section */}
       <section id="challenges" className="max-w-[1440px] mx-auto px-5 sm:px-12 py-[40px] lg:py-24 ">
-        <h2 className=" text-[25.6px] sm:text-[40px] text-dblue font-medium mb-8">
+        <h2 className=" text-[25.6px] sm:text-[40px] text-dblue font-medium mb-[10px]">
           Challenges we help to solve.
         </h2>
 
@@ -257,7 +257,7 @@ const About = React.memo(() => {
       </section>
 
 
-      <section id='count' className='max-w-[1440px] mx-auto px-5 sm:px-12 py-[40px] lg:py-24'>
+      <section id='count' className='max-w-[1440px] mx-auto px-5 sm:px-12 pb-[40px] lg:pb-24'>
         <div className="bg-black w-full min-h-[100px] sm:min-h-[291px] rounded-3xl sm:rounded-[35px] bbg ">
           <div className='px-4 sm:px-16 pt-4 sm:pt-16  '>
             <h2 className='text-white text-[32px] sm:text-[40px] sm:font-normal px-[4px]'>Impact Metrics.</h2>
