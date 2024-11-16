@@ -3,6 +3,7 @@ import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import axios from 'axios';
 import config from '../../config';
+import Modal from '../../components/Modal';
 
 const FormModel = React.memo(({ open, setOpen, details }) => {
     // console.log(details);
@@ -92,6 +93,7 @@ const FormModel = React.memo(({ open, setOpen, details }) => {
                             role: '',
                             resume: ''
                         });
+                       
                         setOpen(false);
                     }
                 })

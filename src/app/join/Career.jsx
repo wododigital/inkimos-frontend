@@ -89,8 +89,8 @@ const Career = React.memo(() => {
     </div>
     <section className="max-w-[1440px] mx-auto px-5  sm:px-12  pb-[40px] lg:pb-24  ">
       <section id="job">
-        <SectionHeading mainTitle="Job Openings." />
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-9">
+        <SectionHeading mainTitle="Job Openings."  />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-9 md:mt-2">
           {jobs && jobs.length > 0 ? (
             jobs.map((job) => (
               <div
@@ -130,11 +130,12 @@ const Career = React.memo(() => {
               </div>
             ))
           ) : (
-            <div className="flex items-center justify-center min-h-screen px-4">
-            <h2 className="text-black text-center text-base sm:text-lg">
-              Currently, no job openings.
-            </h2>
-          </div>
+            <div className="flex items-center min-h-[5vh] md:min-h-[20vh] mt-6 ">
+            <h2 className="text-green text-center text-base sm:text-3xl font-bold whitespace-nowrap ">
+            Thanks for reaching out!
+            We currrently have no job openings.</h2>          </div>
+          
+          
           
           )}
 
@@ -144,8 +145,17 @@ const Career = React.memo(() => {
         <div className="bg-black w-full min-h-[100px] sm:min-h-[291px] rounded-3xl sm:rounded-[35px] p-[17px] sm:p-16 bbg ">
           <h2 className='text-white text-[19px] sm:text-[40px] sm:font-normal '>Explore New Opportunities Beyond Our Current Openings</h2>
           <div className=' py-3 sm:pt-10 '>
-            <button className='bg-green text-black px-[15px] py-[8px] sm:px-[30px] sm:py-[15px] rounded-full sm:font-medium text-[12px] sm:text-[19px] ' >Send Enquiry</button>
-          </div>
+          <button
+            className="bg-green text-black px-[15px] py-[8px] sm:px-[30px] sm:py-[15px] rounded-full sm:font-medium text-[12px] sm:text-[19px]"
+            onClick={() => {
+                document.getElementById('job').scrollIntoView({
+                behavior: 'smooth', // Smooth scrolling
+                block: 'start', // Aligns to the start of the section
+                });
+            }}
+            >
+            Send Enquiry
+            </button>          </div>
         </div>
       </section>
     </section>

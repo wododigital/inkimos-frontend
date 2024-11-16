@@ -34,7 +34,7 @@ const Cards = ({ cardData }) => {
 
     <section className="pt-[20px] md:pt-24 pb-12 md:pb-[96px]  sm:px-12 h-auto sm:max-h-[905px] bg-white">
       <div className='max-w-[1440px] mx-auto px-5 sm:px-12'>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 animate-slide-in-top translate-y-[60%]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 animate-slide-in-top translate-y-[60%]">
           {cardData.map((card, index) => (
             <div
             key={index}
