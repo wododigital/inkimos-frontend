@@ -100,7 +100,7 @@ const Career = React.memo(() => {
         <SectionHeading mainTitle="Job Openings." />
         <div className="flex flex-col md:flex-row gap-4 sm:gap-9">
           <div
-            className="w-full md:w-1/2 h-[270px] md:h-[350px] bg-cover bg-center bg-white border border-green rounded-3xl "
+            className="w-full md:w-1/2 h-[270px] md:h-[360px] bg-cover bg-center bg-white border border-green rounded-3xl "
             style={{ backgroundImage: `url(${JobBg})` }}
           >
 
@@ -110,18 +110,23 @@ const Career = React.memo(() => {
               </button>
               <h3 className='text-black text-[22px] sm:text-[32px] font-medium'>AI Developer</h3>
               <p className='text-black text-[10px]  sm:text-base mb-5 py-1 sm:py-0'>Seeking a driven Junior AI Developer to join our innovative team. Responsibilities include developing and optimizing machine learning models, collaborating with cross-functional teams, and contributing to the advancement of our AI solutions. Ideal candidate possesses strong programming skills, analytical mindset, and a passion for emerging technologies.</p>
-              <button onClick={openModalll}>View Job Description</button>
+              <div className="flex items-center gap-x-14">
+                <button onClick={openModalll} className="text-darkBlue font-medium underline text-[10px] md:text-base">
+                    View Job Description
+                </button>
 
-              <button className="bg-darkBlue py-2 px-3 sm:py-3 sm:px-6 rounded-full text-white text-base md:text-[19.2px] flex mb-[25px]" onClick={openModal}>
-                Apply Now
-                <img src={Inkimos} className='w-4 h-1 sm:w-6 sm:h-1.5 mt-3 sm:mt-2.5 sm:ml-3 ml-2' alt='Inkimos I' />
-              </button>
+                <button className="bg-darkBlue py-2 px-3 sm:py-3 sm:px-6 rounded-full text-white text-base md:text-[19.2px] flex items-center -mt-4" onClick={openModal}>
+                    Apply Now
+                    <img src={Inkimos} className="w-4 h-1 sm:w-6 sm:h-1.5 mt-0 sm:mt-1.5 sm:ml-3 ml-2" alt="Inkimos I" />
+                </button>
+                </div>
+
             </div>
           </div>
 
           {/* Column 2 */}
           <div
-            className="w-full md:w-1/2 h-[270px] md:h-[350px] bg-cover bg-center bg-white border border-green rounded-3xl "
+            className="w-full md:w-1/2 h-[270px] md:h-[360px] bg-cover bg-center bg-white border border-green rounded-3xl "
             style={{ backgroundImage: `url(${JobBg})` }}
           >
 
@@ -131,16 +136,16 @@ const Career = React.memo(() => {
               </button>
               <h3 className='text-black text-[22px] sm:text-[32px] font-medium'>Junior AI Developer</h3>
               <p className='text-black text-[10px]  sm:text-base mb-5 py-1 sm:py-0'>Seeking a driven Junior AI Developer to join our innovative team. Responsibilities include developing and optimizing machine learning models, collaborating with cross-functional teams, and contributing to the advancement of our AI solutions. Ideal candidate possesses strong programming skills, analytical mindset, and a passion for emerging technologies.</p>
-              <button
-                className="text-black text-sm bg-blue-500 py-1 px-3 rounded-full"
-                onClick={() => openModall(jobDescriptions['Junior AI Developer'])}
-              >
-                View Job Description
-              </button>
-              <button className="bg-darkBlue py-2 px-3 sm:py-3 sm:px-6 rounded-full text-white text-base md:text-[19.2px] flex" onClick={openModal}>
-                Apply Now
-                <img src={Inkimos} className='w-4 h-1 sm:w-6 sm:h-1.5 mt-3 sm:mt-2.5 sm:ml-3 ml-2' alt='Inkimos I' />
-              </button>
+              <div className="flex items-center gap-x-14">
+                <button onClick={openModalll} className="text-darkBlue font-medium underline text-[10px] md:text-base">
+                    View Job Description
+                </button>
+
+                <button className="bg-darkBlue py-2 px-3 sm:py-3 sm:px-6 rounded-full text-white text-base md:text-[19.2px] flex items-center -mt-4" onClick={openModal}>
+                    Apply Now
+                    <img src={Inkimos} className="w-4 h-1 sm:w-6 sm:h-1.5 mt-0 sm:mt-1.5 sm:ml-3 ml-2" alt="Inkimos I" />
+                </button>
+                </div>
             </div>
           </div>
         </div>

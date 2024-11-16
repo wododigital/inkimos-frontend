@@ -198,9 +198,7 @@ const Home = React.memo(() => {
               See how we craft tailored solutions that transform your business from the inside out        </h3>
             <img src={Service2} alt='service 2' className='absolute right-0' />
 
-            <div className="absolute inset-0 bg-black opacity-10">
-
-            </div>
+            
             <img src={Inkimos} alt='Inkimos' className='w-12 h-2 absolute right-10 bottom-10' />
           </div>
         </section>
