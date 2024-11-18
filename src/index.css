@@ -7,6 +7,9 @@
 *{
     font-family:"Nunito Sans", sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 .megamenu {
     position: absolute;
