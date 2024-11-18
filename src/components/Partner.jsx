@@ -38,17 +38,17 @@ const Partner = () => {
           <div className="absolute inset-0 bg-service opacity-30 rounded-full  "></div>
 
           {/* Buttons on Video */}
-          <div className="absolute top-12 left-4 sm:left-8 md:left-12 z-10"> {/* Adjusted button positioning */}
+          <div className="absolute top-12 left-4 sm:left-8 md:left-12 z-[5]"> {/* Adjusted button positioning */}
             <button className="bg-black border border-green text-white px-4 py-2 rounded-xl text-xs sm:text-base">
               <Link to="/contact">Expertise You Can Trust</Link>
             </button>
           </div>
-          <div className="absolute center right-8 md:right-4 z-10"> {/* Adjusted button positioning */}
+          <div className="absolute center right-8 md:right-4 z-[5]"> {/* Adjusted button positioning */}
             <button className="bg-black border border-green text-white px-4 py-2 rounded-xl text-xs sm:text-base">
               <Link to="/contact">End-to-End Support</Link>
             </button>
           </div>
-          <div className="absolute bottom-12 left-4 sm:left-8 md:left-12 z-10"> {/* Adjusted button positioning */}
+          <div className="absolute bottom-12 left-4 sm:left-8 md:left-12 z-[5]"> {/* Adjusted button positioning */}
             <button className="bg-black border border-green text-white px-4 py-2 rounded-xl text-xs sm:text-base">
               <Link to="/contact">Driving Innovation Together</Link>
             </button>

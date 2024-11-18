@@ -8,8 +8,8 @@ import ImageGridService from './ImageGridService';
 const PartnerService = () => {
   return (
     <section className="bg-service py-8 mt-8"> {/* Added margin top to avoid overlap */}
-      <div className="max-w-[1440px] mx-auto px-5 sm:px-10 grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="flex flex-col justify-center text-left">
+       <div className="max-w-[1440px] mx-auto px-5 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="flex flex-col justify-center text-left py-8">
           <img src={Inkimos} alt="Inkimos icon" className="w-6 h-1 mb-3 md:mb-6" />
           <h2 className="text-3xl sm:text-[32px] font-medium text-white mb-3 md:mb-6">
             Partner With Us
@@ -23,31 +23,34 @@ const PartnerService = () => {
         </div>
 
         {/* Right Section (Video + Buttons) */}
-        <div className="flex justify-center items-center relative">
+        <div className="flex justify-center items-center relative ">
           {/* Video */}
           <video
-            className="w-full sm:w-[85%] lg:w-[800px] h-[250px] sm:h-[400px] md:h-[400px] rounded-lg object-cover"
+            className="w-full sm:w-[85%] lg:w-[800px] h-[250px] sm:h-[400px] md:h-[400px]  object-cover rounded-full   "
             autoPlay
             muted
             loop
+             playsInline
+             preload="auto"
+             src={Globe}
           >
             <source src={Globe} type="video/mp4" />
-            Your browser does not support the video tag.
+            {/* Your browser does not support the video tag. */}
           </video>
-          <div className="absolute inset-0 bg-black opacity-25"></div>
+          <div className="absolute inset-0 bg-service opacity-30 rounded-full  "></div>
 
           {/* Buttons on Video */}
-          <div className="absolute top-12 left-4 sm:left-8 md:left-12 z-10"> {/* Adjusted button positioning */}
+          <div className="absolute top-12 left-4 sm:left-8 md:left-12 z-[5]"> {/* Adjusted button positioning */}
             <button className="bg-black border border-green text-white px-4 py-2 rounded-xl text-xs sm:text-base">
               <Link to="/contact">Expertise You Can Trust</Link>
             </button>
           </div>
-          <div className="absolute center right-8 md:right-4 z-10"> {/* Adjusted button positioning */}
+          <div className="absolute center right-8 md:right-4 z-[5]"> {/* Adjusted button positioning */}
             <button className="bg-black border border-green text-white px-4 py-2 rounded-xl text-xs sm:text-base">
               <Link to="/contact">End-to-End Support</Link>
             </button>
           </div>
-          <div className="absolute bottom-12 left-4 sm:left-8 md:left-12 z-10"> {/* Adjusted button positioning */}
+          <div className="absolute bottom-12 left-4 sm:left-8 md:left-12 z-[5]"> {/* Adjusted button positioning */}
             <button className="bg-black border border-green text-white px-4 py-2 rounded-xl text-xs sm:text-base">
               <Link to="/contact">Driving Innovation Together</Link>
             </button>
