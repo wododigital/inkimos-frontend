@@ -16,7 +16,6 @@ import { React, useEffect } from 'react';
 
 const Service = () => {
 
-
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -35,11 +34,11 @@ const Service = () => {
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
 
-        <div className="absolute mt-24 md:mt-0 inset-0 flex flex-col items-center justify-center text-center px-4">
+        <div className="absolute pt-24 inset-0 flex flex-col items-center justify-center text-center px-4">
           <h1 className="text-2xl md:text-[40px] font-medium mb-2 md:mb-6 text-white">
             Our Services
           </h1>
-          <p className="text-[16px] sm:text-[18px] md:text-[19px] text-white lg:w-[35%]">
+          <p className="text-[16px] sm:text-[18px] md:text-[19px] text-white lg:w-[50%]">
             Transformation isn’t just a phase—it’s a continuous strategy for success. At Inkimos, we help you harness change, turning challenges into opportunities.
           </p>
         </div>
@@ -50,7 +49,7 @@ const Service = () => {
         <section className="flex justify-between px-6 overflow-hidden space-x-6">
           {/* Left Card */}
           <div
-            className="relative bg-cover bg-center w-[627px] h-[300px] flex rounded-3xl p-6 translate-x-[-60%] transition-transform duration-500 ease-in-out animate-slide-in-left"
+            className="relative bg-cover bg-right lg:bg-center w-[627px] h-[300px] flex rounded-3xl p-6 translate-x-[-60%] transition-transform duration-500 ease-in-out animate-slide-in-left"
             style={{
               backgroundImage: `url(${BlueBg})`,
             }}

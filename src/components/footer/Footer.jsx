@@ -100,7 +100,7 @@ const Footer = () => {
             <div className="mt-8 pt-4 lg:mt-16 lg:pt-8 border-t border-gray-800 flex flex-col lg:flex-row justify-between items-center">
                 <p className="text-gray-400 text-sm">Inkimos. All Rights Reserved.</p>
                 <p className="text-gray-400 text-sm mt-2 lg:mt-0">
-                    Designed by <a href="https://wodo.digital">WODO</a>
+                    Designed by <a href="https://wodo.digital" target='_blank'>WODO</a>
                 </p>
             </div>
         </div>

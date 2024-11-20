@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import './BlogCards.css';
 import Inkimos from '../../assets/IMG 5.png';
+import config from '../../config';
 
 const BlogCards = () => {
   const [blogs, setBlogs] = useState([]);
@@ -11,13 +12,19 @@ const BlogCards = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await fetch('/api'); 
+      const apiEndpoint =
+      config.baseUrl === 'http://localhost:3004'
+          ? '/api' 
+          : 'https://inkimos.com/insights/wp-json/wp/v2/posts?_embed'; 
+  
+      const response = await fetch(apiEndpoint);
       const data = await response.json();
-      setBlogs(data); 
+      setBlogs(data);
     } catch (error) {
       console.error('Error fetching blogs:', error);
     }
   };
+  
 
   useEffect(() => {
     fetchBlogs();
@@ -69,7 +76,7 @@ const BlogCards = () => {
     {blogs.slice(currentIndexLarge, currentIndexLarge + 3).map((blog) => (
       <a 
         key={blog.id} 
-        href={`/${convertToSlug(blog.title.rendered)}`} // Decode the URL-encoded title
+        href={`insights/${convertToSlug(blog.title.rendered)}`} // Decode the URL-encoded title
         className="blog-card bg-white rounded-3xl border relative min-h-[380px]"
       >
         <div className="relative">
