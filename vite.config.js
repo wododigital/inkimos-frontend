@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://inkimos.com/insights/wp-json/wp/v2/posts', // WordPress API endpoint
+        target: 'https://inkimos.com/insights/wp-json/wp/v2/posts?_embed', // WordPress API endpoint
         changeOrigin: true, // To handle CORS properly
         rewrite: (path) => path.replace(/^\/api/, ''), // Remove '/api' from the path
       },
