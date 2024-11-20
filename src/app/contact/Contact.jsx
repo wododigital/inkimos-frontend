@@ -120,7 +120,7 @@ const Contact = React.memo(() => {
         }}
       >
         <img src={Arrow} alt='arrow' className='absolute bottom-[-48px] md:bottom-[-160px] right-0 w-[50px] h-[100px] md:w-[154px] md:h-[344px] z-10' />
-        <section className="max-w-[1440px] mx-auto px-5 sm:px-12 mt-10 py-[40px] md:py-12 ">
+        <section className="max-w-[1440px] mx-auto px-5 sm:px-12 mt-10 py-[40px] md:py-28 ">
           <div className="z-10 text-white flex flex-col md:flex-row gap-4">
             {/* Column 1 - Text */}
             <div className="flex-1 flex flex-col items-start space-y-4 md:space-y-8 ">
@@ -155,14 +155,14 @@ const Contact = React.memo(() => {
               </div>
 
               <div className='flex space-x-4 md:space-x-10 text-xl md:text-2xl'>
-                <BsTwitterX className='hover:text-green' />
-                <FaInstagram className='hover:text-green' />
-                <FaLinkedin className='hover:text-green' />
+                <a href="https://x.com/inkimos81419" target='_blank'><BsTwitterX className='hover:text-green' /></a>
+                <a href="https://www.instagram.com/inkimos_ae/?igsh=YTFkOHYzNWNsdzJy" target='_blank'><FaInstagram className='hover:text-green' /></a>
+                <a href="https://www.linkedin.com/company/inkimos" target='_blank'><FaLinkedin className='hover:text-green' /></a>
               </div>
             </div>
 
             {/* Column 2 - Form */}
-            <div className="flex-1 flex flex-col bg-grey bg-opacity-55 backdrop-blur-lg p-6 md:p-12 rounded-xl ">
+            <div className="flex-1 flex flex-col bg-[#FFFFFF14] bg-opacity-55 backdrop-blur-lg p-6 md:p-12 rounded-xl ">
               <form  onSubmit={formHandler}>
                 <div className='py-3'>
                   <input
@@ -173,7 +173,7 @@ const Contact = React.memo(() => {
                     value={data.fullName}
                     onChange={inputHandler}
                   />
-                  {errors && <p className="text-green text-sm">{errors.fullName}</p>}
+                   <p className="text-green text-sm h-2">{errors && errors.fullName}</p>
                 </div>
 
                 <div className='py-3'>
@@ -185,7 +185,7 @@ const Contact = React.memo(() => {
                     value={data.phoneNumber}
                     onChange={inputHandler}
                   />
-                   {errors && <p className="text-green text-sm">{errors.phoneNumber}</p>}
+                   <p className="text-green text-sm h-2">{errors && errors.phoneNumber}</p>
                 </div>
 
                 <div className='py-3'>
@@ -197,7 +197,7 @@ const Contact = React.memo(() => {
                     value={data.email}
                     onChange={inputHandler}
                   />
-                  {errors && <p className="text-green text-sm">{errors.email}</p>}
+                  <p className="text-green text-sm h-2">{errors && errors.email}</p>
                 </div>
 
                 <div className='py-3'>
@@ -210,7 +210,7 @@ const Contact = React.memo(() => {
                     <option value="IT" className='text-black'>IT</option>
           
                   </select>
-                  {errors && <p className="text-green text-sm">{errors.industry}</p>}
+                  <p className="text-green text-sm h-2">{errors && errors.industry}</p>
                 </div>
 
                 <div className='py-3'>
@@ -221,7 +221,7 @@ const Contact = React.memo(() => {
                     value={data.message}
                     onChange={inputHandler}
                   ></textarea>
-                  {errors && <p className="text-green text-sm">{errors.message}</p>}
+                 <p className="text-green text-sm h-2">{errors && errors.message}</p>
                 </div>
 
                 <div className='py-3'>
@@ -230,7 +230,7 @@ const Contact = React.memo(() => {
                     I give consent to the processing of my personal data given in the contact form above as well as receiving commercial and marketing communications under the terms and conditions of Inkimos' Privacy Policy.
                   </label>
 
-                  {errors && <p className="text-green text-sm">{errors.checkbox}</p>}
+                  <p className="text-green text-sm h-2">{errors && errors.checkbox}</p>
                 </div>
 
                 <div className="flex justify-center">

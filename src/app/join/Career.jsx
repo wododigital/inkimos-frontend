@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import CarrerBg from '../../assets/carrer-bg.jpg'
 import JobBg from '../../assets/IMG 2.svg'
 import Inkimos from '../../assets/IMG 5.png'
@@ -10,6 +10,7 @@ import axios from 'axios'
 import config from '../../config'
 
 const Career = React.memo(() => {
+  const jobSectionRef = useRef(null);
   const [jobs, setJobs] = useState(null);
 
   useEffect(() => {
@@ -18,8 +19,8 @@ const Career = React.memo(() => {
       behavior: "smooth",
     });
 
-    axios.get(`${config.baseUrl}/api/get-applications`,{
-      withCredentials :true
+    axios.get(`${config.baseUrl}/api/get-applications`, {
+      withCredentials: true
     })
       .then((res) => {
         // console.log(res)
@@ -36,8 +37,8 @@ const Career = React.memo(() => {
 
   const [open, setOpen] = useState(false);
   const [details, setDetails] = useState({
-     code:'',
-     title:'',
+    code: '',
+    title: '',
   });
   const [description, setDescription] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -47,7 +48,7 @@ const Career = React.memo(() => {
     setIsModalOpen(true);
   };
 
-  const closeModal = () =>{ 
+  const closeModal = () => {
     setIsModalOpen(false);
     setTimeout(() => {
       setDescription('');
@@ -56,8 +57,8 @@ const Career = React.memo(() => {
 
   const openModal = (id, title) => {
     setDetails({
-      code:id,
-      title:title,
+      code: id,
+      title: title,
     });
     setOpen(true);
   }
@@ -88,8 +89,8 @@ const Career = React.memo(() => {
       </div>
     </div>
     <section className="max-w-[1440px] mx-auto px-5  sm:px-12  pb-[40px] lg:pb-24  ">
-      <section id="job">
-        <SectionHeading mainTitle="Job Openings."  />
+      <section ref={jobSectionRef}>
+        <SectionHeading mainTitle="Job Openings." />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-9 md:mt-2">
           {jobs && jobs.length > 0 ? (
             jobs.map((job) => (
@@ -104,11 +105,11 @@ const Career = React.memo(() => {
                   </button>
                   <h3 className="text-black text-[22px] sm:text-[32px] font-medium">{job.job_title}</h3>
                   <p className="text-black text-[10px] sm:text-base mb-5 py-1 sm:py-0" dangerouslySetInnerHTML={{ __html: job.overview }}>
-                   
+
                   </p>
                   <div className="flex items-center gap-x-14 md:absolute bottom-8">
                     <button
-                      onClick={()=>{openDescription(job.description) ; setDetails({ code: job.job_code, title:job.job_title })}}
+                      onClick={() => { openDescription(job.description); setDetails({ code: job.job_code, title: job.job_title }) }}
                       className="text-darkBlue font-medium underline text-[10px] md:text-base"
                     >
                       View Job Description
@@ -130,13 +131,12 @@ const Career = React.memo(() => {
               </div>
             ))
           ) : (
-            <div className="flex items-center min-h-[5vh] md:min-h-[20vh] mt-6 ">
-            <h2 className="text-green text-center text-base sm:text-3xl font-bold whitespace-nowrap ">
-            Thanks for reaching out!
-            We currrently have no job openings.</h2>          </div>
-          
-          
-          
+            <div className="flex items-center mt-6 ">
+              <h2 className="text-green text-center text-base sm:text-3xl font-bold whitespace-nowrap ">
+                Thanks for reaching out!
+                We currrently have no job openings.
+              </h2>
+            </div>
           )}
 
         </div>
@@ -145,16 +145,16 @@ const Career = React.memo(() => {
         <div className="bg-black w-full min-h-[100px] sm:min-h-[291px] rounded-3xl sm:rounded-[35px] p-[17px] sm:p-16 bbg ">
           <h2 className='text-white text-[19px] sm:text-[40px] sm:font-normal '>Explore New Opportunities Beyond Our Current Openings</h2>
           <div className=' py-3 sm:pt-10 '>
-          <button
-            className="bg-green text-black px-[15px] py-[8px] sm:px-[30px] sm:py-[15px] rounded-full sm:font-medium text-[12px] sm:text-[19px]"
-            onClick={() => {
-                document.getElementById('job').scrollIntoView({
-                behavior: 'smooth', // Smooth scrolling
-                block: 'start', // Aligns to the start of the section
+            <button
+              className="bg-green text-black px-[15px] py-[8px] sm:px-[30px] sm:py-[15px] rounded-full sm:font-medium text-[12px] sm:text-[19px]"
+              onClick={() => {
+                jobSectionRef.current.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start',
                 });
-            }}
+              }}
             >
-            Send Enquiry
+              Send Enquiry
             </button>          </div>
         </div>
       </section>
