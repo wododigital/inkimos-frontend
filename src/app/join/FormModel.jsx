@@ -150,6 +150,8 @@ const FormModel = React.memo(({ open, setOpen, details }) => {
                                                         onChange={inputHandler}
                                                         value={data.phoneNumber}
                                                     />
+                                                   <p className="text-green text-sm h-2">{errors && errors.phoneNumber}</p>
+
                                                 </div>
                                                <p className="text-green text-sm h-2">{errors && errors.phoneNumber}</p>
                                             </div>

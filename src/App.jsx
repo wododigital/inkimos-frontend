@@ -19,6 +19,7 @@ import ItService from './app/service/ItService';
 import Service from './app/Servicehome/Service';
 import Home from './app/home/Home';
 import IndustryExperts from './app/industry-experts/IndustryExperts';
+import JobApplication from './app/Job/JobApplication';
 import NotFound from './app/notfound/NotFound';
 function App() {
  
@@ -41,6 +42,9 @@ return(<>
         <Route path="/terms-and-conditions" element={<TermsAndConditions/>}/>
         <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
         <Route path="/industry-expertise" element={<IndustryExperts/>}/>
+        <Route path="/job-application" element={<JobApplication/>}/>
+
+        
         <Route path="*" element={<NotFound/>}/>
 
         </Routes>

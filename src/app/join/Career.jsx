@@ -7,11 +7,15 @@ import './carrer.css'
 import FormModel from './FormModel'
 import DescriptionModal from './DescriptionModel';
 import axios from 'axios'
-import config from '../../config'
+import config from '../../config';
+import { useNavigate } from 'react-router-dom';
+
 
 const Career = React.memo(() => {
   const jobSectionRef = useRef(null);
   const [jobs, setJobs] = useState(null);
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     window.scrollTo({
@@ -34,7 +38,9 @@ const Career = React.memo(() => {
       })
 
   }, []);
-
+  const handleApply = (jobTitle) => {
+    navigate(`/job-application`, { state: { jobTitle } });
+  };
   const [open, setOpen] = useState(false);
   const [details, setDetails] = useState({
     code: '',
@@ -117,8 +123,8 @@ const Career = React.memo(() => {
 
                     <button
                       className="bg-darkBlue py-2 px-3 sm:py-3 sm:px-6 rounded-full text-white text-base md:text-[19.2px] flex items-center -mt-4"
-                      onClick={() => openModal(job.job_code, job.job_title)}
-                    >
+                      onClick={() => handleApply(job.job_title)}
+                      >
                       Apply Now
                       <img
                         src={Inkimos}
@@ -160,12 +166,7 @@ const Career = React.memo(() => {
       </section>
     </section>
 
-    <DescriptionModal
-      open={isModalOpen}
-      setOpen={closeModal}
-      htmlContent={description}
-      applyBtn={applyBtn}
-    />
+    <DescriptionModal open={isModalOpen} setOpen={closeModal} htmlContent={description}applyBtn={applyBtn}/>
     <FormModel open={open} setOpen={setOpen} details={details} />
   </>
   )
