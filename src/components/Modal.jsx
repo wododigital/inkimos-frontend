@@ -20,8 +20,8 @@ const Modal = ({ isOpen, setIsOpen, title, message}) => {
   
               <div className="bg-white text-center pb-10 px-10">
                 <div className="flex justify-center">
-                  <div className={`bg-green-200 w-10 h-10 rounded-full flex justify-center items-center`}>
-                     <MdCheck className='text-center text-green-600 text-2xl '/>
+                  <div className='border-2 border-green w-10 h-10 rounded-full flex justify-center items-center'>
+                     <MdCheck className='text-center text-green text-2xl '/>
                   </div>
                 </div>
                 <h3 className="my-5 font-noto font-bold text-lg">{title}</h3>

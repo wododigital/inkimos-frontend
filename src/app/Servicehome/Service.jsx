@@ -59,7 +59,7 @@ const Service = () => {
               Unlock the potential of data with cutting-edge AI and machine learning solutions that enhance
               decision-making, automate processes, and create new opportunities for growth.
             </h3>
-            <Link to="/artificial-intelligence">
+            <Link to="/our-services/artificial-intelligence">
               <FaArrowCircleRight className="absolute right-6 bottom-6 w-8 h-8 text-arrowBlue cursor-pointer" />
             </Link>
           </div>
@@ -75,7 +75,7 @@ const Service = () => {
             <h3 className="text-[16px] font-light text-white absolute bottom-0 max-w-[60%] pb-6">
               Achieve greater efficiency and growth with a combination of expert consulting and tailored BPO services.
             </h3>
-            <Link to="/business-process-outsourcing">
+            <Link to="/our-services/business-process-outsourcing">
               <FaArrowCircleRight className="absolute right-6 bottom-6 w-8 h-8 text-arrowBlue cursor-pointer" />
             </Link>
           </div>
@@ -91,7 +91,7 @@ const Service = () => {
             <h2 className="text-[25px] font-medium text-black">Cloud Computing</h2>
             <h3 className="text-[16px] font-normal text-black absolute bottom-0 max-w-[60%] pb-6">
               Empower your business with secure, flexible, and future-ready cloud environments.        </h3>
-            <Link to="/cloud-computing">
+            <Link to="/our-services/cloud-computing">
               <FaArrowCircleRight className="absolute right-6 top-6 w-8 h-8 text-arrowBlue cursor-pointer" />
             </Link>
 
@@ -107,7 +107,7 @@ const Service = () => {
             <h2 className="text-[25px] font-medium text-black">Digital Transformation</h2>
             <h3 className="text-[16px] font-normal text-black absolute bottom-0 max-w-[80%] pb-6">
               Accelerate your digital journey with innovative product engineering, customer-centric experiences, and future-ready strategies.                </h3>
-            <Link to="/digital-transformation">
+            <Link to="/our-services/digital-transformation">
               <FaArrowCircleRight className="absolute right-6 top-6 w-8 h-8 text-arrowBlue cursor-pointer" />
             </Link>
 
@@ -122,7 +122,7 @@ const Service = () => {
             <h2 className="text-[25px] font-medium text-black">Custom Software</h2>
             <h3 className="text-[16px] font-normal text-black absolute bottom-0 max-w-[70%] pb-6">
               Empower your business with tailor-made software solutions that streamline operations and drive growth.                             </h3>
-            <Link to="/custom-software">
+            <Link to="/our-services/custom-software">
               <FaArrowCircleRight className="absolute right-6 top-6 w-8 h-8 text-arrowBlue cursor-pointer" />
             </Link>
           </div>
@@ -140,7 +140,7 @@ const Service = () => {
               Managed Services & IT Support
             </h2>
             <h3 className='text-[16px] text-white font-normal absolute  max-w-[50%] top-24 left-[36%]'>From 24/7 support to network management and cybersecurity, we provide end-to-end managed services that keep your operations secure, efficient, and always running smoothly.</h3>
-            <Link to="/managed-services-it-support">
+            <Link to="/our-services/managed-services-it-support">
               <FaArrowCircleRight className="absolute right-16 top-10 w-8 h-8 text-arrowBlue cursor-pointer" />
             </Link>
           </div>
@@ -161,7 +161,7 @@ const Service = () => {
             <h3 className=" text-[12.8px] md:text-[16px] font-light text-white absolute bottom-0 max-w-[70%] pb-6">
               Unlock the potential of data with cutting-edge AI and machine learning solutions that enhance decision-making, automate processes, and create new opportunities for growth.
             </h3>
-            <Link to="/artificial-intelligence">
+            <Link to="/our-services/artificial-intelligence">
               <FaArrowCircleRight className="absolute right-6 top-7 w-8 h-8 text-white cursor-pointer" />
             </Link>
           </div>
@@ -176,7 +176,7 @@ const Service = () => {
             <h3 className="text-[12.8px] md:text-[16px] font-light text-white absolute bottom-0 max-w-[60%] pb-6">
               Achieve greater efficiency and growth with a combination of expert consulting and tailored BPO services.
             </h3>
-            <Link to="/business-process-outsourcing">
+            <Link to="/our-services/business-process-outsourcing">
               <FaArrowCircleRight className="absolute right-6 top-7 w-8 h-8 text-arrowBlue cursor-pointer" />
             </Link>
           </div>
@@ -192,7 +192,7 @@ const Service = () => {
             <h3 className="text-[12.8px] md:text-[16px] font-normal text-black absolute bottom-0 max-w-[60%] pb-6">
               Empower your business with secure, flexible, and future-ready cloud environments.
             </h3>
-            <Link to="/cloud-computing">
+            <Link to="/our-services/cloud-computing">
               <FaArrowCircleRight className="absolute right-6 top-7 w-8 h-8 text-arrowBlue cursor-pointer" />
             </Link>
           </div>
@@ -205,7 +205,7 @@ const Service = () => {
             <h3 className="text-[12.8px] md:text-[16px] font-normal text-black absolute bottom-0 max-w-[80%] pb-6">
               Accelerate your digital journey with innovative product engineering, customer-centric experiences, and future-ready strategies.
             </h3>
-            <Link to="/digital-transformation">
+            <Link to="/our-services/digital-transformation">
               <FaArrowCircleRight className="absolute right-6 top-7 w-8 h-8 text-arrowBlue cursor-pointer" />
             </Link>
           </div>
@@ -219,7 +219,7 @@ const Service = () => {
             <h3 className="text-[12.8px] md:text-[16px] font-normal text-black absolute bottom-0 max-w-[70%] pb-6">
               Empower your business with tailor-made software solutions that streamline operations and drive growth.
             </h3>
-            <Link to="/custom-software">
+            <Link to="/our-services/custom-software">
               <FaArrowCircleRight className="absolute right-6 top-7 w-8 h-8 text-arrowBlue cursor-pointer" />
             </Link>
           </div>
@@ -237,7 +237,7 @@ const Service = () => {
             <h3 className="text-[12.8px] md:text-[16px] font-light text-white absolute bottom-0 max-w-[60%] pb-6">
               From 24/7 support to network management and cybersecurity, we provide end-to-end managed services that keep your operations secure, efficient, and always running smoothly.
             </h3>
-            <Link to="/managed-services-it-support">
+            <Link to="/our-services/managed-services-it-support">
               <FaArrowCircleRight className="absolute right-6 top-7 w-8 h-8 text-arrowBlue cursor-pointer" />
             </Link>
           </div>

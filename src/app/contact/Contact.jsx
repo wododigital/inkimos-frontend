@@ -10,6 +10,7 @@ import InvengerBg from '../../assets/Invenger.png';
 import SectionHeading from '../../components/heading/Heading';
 import  axios  from 'axios';
 import config from '../../config';
+import Modal from '../../components/Modal'
 
 const Contact = React.memo(() => {
   const [data, setData]=useState({
@@ -20,7 +21,7 @@ const Contact = React.memo(() => {
     message:'',
     checkbox:false,
   });
-
+  const [open, setOpen] = useState(false);
   const [errors, setErrors]=useState(null);
   const validateForm = () => {
       const validationErrors = {};
@@ -86,6 +87,7 @@ const Contact = React.memo(() => {
           })
           .then((res)=>{
               // console.log(res.data);
+              setOpen(true);
               if(res.data.status==="success"){
                   setData({
                     fullName:'',
@@ -226,7 +228,7 @@ const Contact = React.memo(() => {
 
                 <div className='py-3'>
                   <label htmlFor="agree" className="text-white text-sm md:text-base">
-                  <input type="checkbox" id="agree" className="mr-2" checked={data.checkbox} onChange={(e) => console.log(e.target.checked ? setData((preData)=>({...preData, checkbox: true})) : setData((preData)=>({...preData, checkbox: false})))} />
+                  <input type="checkbox" id="agree" className="mr-2" checked={data.checkbox} onChange={(e)=>setData({ ...data, checkbox: e.target.checked })}/>
                     I give consent to the processing of my personal data given in the contact form above as well as receiving commercial and marketing communications under the terms and conditions of Inkimos' Privacy Policy.
                   </label>
 
@@ -291,6 +293,12 @@ const Contact = React.memo(() => {
           </div>
         </div>
       </section>
+      <Modal
+          isOpen={open}
+          setIsOpen={setOpen}
+          title="Message Sent!"
+          message="Thank you for reaching out! We've received your message and will get back to you as soon as possible."
+      />
     </>
   );
 });

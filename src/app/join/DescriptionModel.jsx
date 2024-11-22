@@ -2,8 +2,9 @@ import React from 'react';
 import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import Inkimos from '../../assets/IMG 5.png'
+import { Link } from 'react-router-dom'
 
-const DescriptionModal = React.memo(({ open, setOpen, htmlContent, applyBtn }) => {
+const DescriptionModal = React.memo(({ open, setOpen, htmlContent, details }) => {
   return (
     <Dialog open={open} onClose={setOpen} className="relative z-10">
       <DialogBackdrop
@@ -28,16 +29,10 @@ const DescriptionModal = React.memo(({ open, setOpen, htmlContent, applyBtn }) =
                   ></div>
 
                   <div className="mt-10 flex justify-center">
-                    {/* <button
-                      onClick={() => setOpen(false)}
-                      className="border-2 border-green rounded-full text-white bg-green px-6 py-3 text-sm font-semibold shadow-sm transition duration-300 hover:bg-darkGreen hover:text-black"
-                    >
-                      Close
-                      
-                    </button> */}
-                     <button
+
+                    <Link
                       className="bg-darkBlue py-2 px-3 sm:py-3 sm:px-6 rounded-full text-white text-base md:text-[19.2px] flex items-center -mt-4 text-center"
-                      onClick={applyBtn}
+                      to={`/job-application/${details.code}`}
                     >
                       Apply Now
                       <img
@@ -45,7 +40,7 @@ const DescriptionModal = React.memo(({ open, setOpen, htmlContent, applyBtn }) =
                         className="w-4 h-1 sm:w-6 sm:h-1.5 sm:ml-3 ml-2"
                         alt="Inkimos I"
                       />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

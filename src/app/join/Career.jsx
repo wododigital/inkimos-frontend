@@ -4,19 +4,14 @@ import JobBg from '../../assets/IMG 2.svg'
 import Inkimos from '../../assets/IMG 5.png'
 import SectionHeading from '../../components/heading/Heading'
 import './carrer.css'
-import FormModel from './FormModel'
 import DescriptionModal from './DescriptionModel';
 import axios from 'axios'
 import config from '../../config';
-import { useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 
 const Career = React.memo(() => {
   const jobSectionRef = useRef(null);
   const [jobs, setJobs] = useState(null);
-  const navigate = useNavigate();
-
-
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -38,10 +33,7 @@ const Career = React.memo(() => {
       })
 
   }, []);
-  const handleApply = (jobTitle) => {
-    navigate(`/job-application`, { state: { jobTitle } });
-  };
-  const [open, setOpen] = useState(false);
+
   const [details, setDetails] = useState({
     code: '',
     title: '',
@@ -61,19 +53,7 @@ const Career = React.memo(() => {
     }, 500);
   };
 
-  const openModal = (id, title) => {
-    setDetails({
-      code: id,
-      title: title,
-    });
-    setOpen(true);
-  }
 
-  const applyBtn = () => {
-    // alert('clicked');
-    setIsModalOpen(false);
-    setOpen(true);
-  }
 
   return (<>
     <div className="w-full min-h-[370px] md:min-h-[500px] flex items-center justify-center relative">
@@ -121,17 +101,17 @@ const Career = React.memo(() => {
                       View Job Description
                     </button>
 
-                    <button
+                    <Link
                       className="bg-darkBlue py-2 px-3 sm:py-3 sm:px-6 rounded-full text-white text-base md:text-[19.2px] flex items-center -mt-4"
-                      onClick={() => handleApply(job.job_title)}
-                      >
+                      to={`/job-application/${job.job_code}`}
+                    >
                       Apply Now
                       <img
                         src={Inkimos}
                         className="w-4 h-1 sm:w-6 sm:h-1.5 sm:ml-3 ml-2"
                         alt="Inkimos I"
                       />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -166,8 +146,7 @@ const Career = React.memo(() => {
       </section>
     </section>
 
-    <DescriptionModal open={isModalOpen} setOpen={closeModal} htmlContent={description}applyBtn={applyBtn}/>
-    <FormModel open={open} setOpen={setOpen} details={details} />
+    <DescriptionModal open={isModalOpen} setOpen={closeModal} htmlContent={description} details={details} />
   </>
   )
 });
