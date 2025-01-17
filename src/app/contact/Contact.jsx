@@ -23,6 +23,7 @@ const Contact = React.memo(() => {
   });
   const [open, setOpen] = useState(false);
   const [errors, setErrors]=useState(null);
+  const [loading, setLoading]=useState(false);
   const validateForm = () => {
       const validationErrors = {};
 
@@ -74,6 +75,7 @@ const Contact = React.memo(() => {
           setErrors(validationErrors);
           //console.log(validationErrors);
       } else {
+          setLoading(true);
           setErrors(null);
           const formData=new FormData();
           formData.append('name', data.fullName);
@@ -97,11 +99,12 @@ const Contact = React.memo(() => {
                     message:'',
                     checkbox:false,
                   });
-                 
+                  setLoading(false);
               }
           })
           .catch((err)=>{
               console.log(err);
+              setLoading(false);
           })
       }
   }
@@ -210,6 +213,11 @@ const Contact = React.memo(() => {
                   >
                     <option value="" disabled className='text-black'>Select Industry Type</option>
                     <option value="IT" className='text-black'>IT</option>
+                    <option value="Automotive" className='text-black'>Automotive</option>
+                    <option value="Manufacturing" className='text-black'>Manufacturing</option>
+                    <option value="Logistics" className='text-black'>Logistics</option>
+                    <option value="Insurance" className='text-black'>Insurance</option>
+                    <option value="Real Estate" className='text-black'>Real Estate</option>
           
                   </select>
                   <p className="text-green text-sm h-2">{errors && errors.industry}</p>
@@ -236,8 +244,8 @@ const Contact = React.memo(() => {
                 </div>
 
                 <div className="flex justify-center">
-                  <button type="submit" className="bg-black text-white py-3 px-6 rounded-full hover:bg-green hover:text-black text-base md:text-[19px]">
-                    Submit
+                  <button type="submit" className="bg-black text-white py-3 px-6 rounded-full hover:bg-green hover:text-black text-base md:text-[19px]" disabled={loading}>
+                    {loading ? 'Sending...' : 'Submit'}
                   </button>
                 </div>
               </form>

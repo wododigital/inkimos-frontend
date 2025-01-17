@@ -11,7 +11,7 @@ const Footer = () => {
             { label: 'About', path: '/about' },
             { label: 'What we do', path: '/our-services' },
             { label: 'Careers', path: '/careers' },
-            { label: 'Insights', path: '/insights' }
+            { label: 'Insights', path: 'https://inkimos.com/insights' }
         ],
         'Services': [
             { label: 'Artificial Intelligence', path: '/our-services/artificial-intelligence' },
@@ -86,9 +86,18 @@ const Footer = () => {
                         >
                             {links.map((link, index) => (
                                 <li key={index}>
-                                    <Link to={link.path} className="text-gray-400 hover:text-green transition-colors">
-                                        {link.label}
-                                    </Link>
+                                    {link.label === 'Insights' ? (
+                                        <a 
+                                            href={link.path} 
+                                            className="text-gray-400 hover:text-green transition-colors"
+                                        >
+                                            {link.label}
+                                        </a>
+                                    ) : (
+                                        <Link to={link.path} className="text-gray-400 hover:text-green transition-colors">
+                                            {link.label}
+                                        </Link>
+                                    )}
                                 </li>
                             ))}
                         </ul>

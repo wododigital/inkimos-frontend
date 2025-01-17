@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useParams, useNavigate} from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Itbg from '../../assets/It (1).png';
 import img from '../../assets/Layer 1.png';
 import config from '../../config';
@@ -10,8 +10,9 @@ const JobApplication = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [open, setOpen] = useState(false);
-  const resumeFile =useRef(null);
-  const [details, setDetails]=useState(null);
+  const resumeFile = useRef(null);
+  const [details, setDetails] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
     fullName: '',
     phoneNumber: '',
@@ -19,32 +20,32 @@ const JobApplication = () => {
     linkedInUrl: '',
     role: id,
     resume: '',
-    additionalInfo:'',
+    additionalInfo: '',
     termsAndConditions: false
   });
-  useEffect(()=>{
+  useEffect(() => {
     const fetchData = async () => {
       try {
         //setLoading(true);
         const response = await axios.get(`${config.baseUrl}/api/job-details/${id}`);
-        if(response.data.status==='success'){
+        if (response.data.status === 'success') {
           setDetails(response.data.data[0]);
           //console.log(response.data.data[0]);
-        }else{
+        } else {
           navigate('/careers');
         }
       } catch (err) {
         console.error(err);
-      } 
+      }
       // finally {
       //   setLoading(false); 
       // }
     };
 
-    if (id) { 
+    if (id) {
       fetchData();
     }
-  },[id])
+  }, [id])
 
 
   const [errors, setErrors] = useState(null);
@@ -99,19 +100,20 @@ const JobApplication = () => {
 
   const formHandler = (e) => {
     e.preventDefault();
-    console.log('working');
+    //console.log('working');
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       //console.log(validationErrors);
     } else {
+      setLoading(true);
       setErrors(null);
-     // console.log(data);
+      // console.log(data);
       const formData = new FormData();
       formData.append('name', data.fullName);
       formData.append('phone', data.phoneNumber);
       formData.append('email', data.email);
-      formData.append('role', data.role);
+      formData.append('role', id);
       formData.append('url', data.linkedInUrl);
       formData.append('resume', data.resume);
       formData.append('details', data.additionalInfo);
@@ -124,17 +126,15 @@ const JobApplication = () => {
               phoneNumber: '',
               email: '',
               linkedInUrl: '',
-              role: '',
-              resume: '',
-              additionalInfo:'',
-              termsAndConditions: false
-            });
-
-           
+              resume: null,
+              additionalInfo: '',
+            })
+            setLoading(false);
           }
         })
         .catch((err) => {
           console.log(err);
+          setLoading(false);
         })
     }
   }
@@ -160,8 +160,8 @@ const JobApplication = () => {
             <h1 className="text-[25.6px] md:text-[48px] font-medium text-white max-w-[1000px]">
               {details && details.job_title}
             </h1>
-            <h2 className="text-[14.4px] sm:text-base font-light text-white max-w-md md:max-w-2xl lg:max-w-4xl mt-4" dangerouslySetInnerHTML={{ __html: details && details.overview}}>
-              
+            <h2 className="text-[14.4px] sm:text-base font-light text-white max-w-md md:max-w-2xl lg:max-w-4xl mt-4" dangerouslySetInnerHTML={{ __html: details && details.overview }}>
+
             </h2>
           </div>
         </div>
@@ -173,29 +173,29 @@ const JobApplication = () => {
           {/* Fixed 30% Column (mobile: bottom, desktop: right) */}
           <div className="w-full lg:w-[30%] mt-10 lg:mt-0">
             <div className='border-green border-2 rounded-xl p-5 lg:p-10 relative'>
-                <h2 className="text-[20px] lg:text-[24px] font-semibold mb-2">Working Type</h2>
-                <p className="text-base mb-6">Full Time</p>
+              <h2 className="text-[20px] lg:text-[24px] font-semibold mb-2">Working Type</h2>
+              <p className="text-base mb-6">Full Time</p>
 
-                <h2 className="text-[20px] lg:text-[24px] font-semibold mb-2">Location</h2>
-                <p className="text-base mb-6">On site</p>
+              <h2 className="text-[20px] lg:text-[24px] font-semibold mb-2">Location</h2>
+              <p className="text-base mb-6">On site</p>
 
-                <h2 className="text-[20px] lg:text-[24px] font-semibold mb-2">Contact</h2>
-                {/* <p className="text-base">+0000000000</p> */}
-                <p className="text-base mb-6">info@inkimos.com</p>
+              <h2 className="text-[20px] lg:text-[24px] font-semibold mb-2">Contact</h2>
+              {/* <p className="text-base">+0000000000</p> */}
+              <p className="text-base mb-6">info@inkimos.com</p>
 
-                {/* <img src={Rectangle} alt="Image" className="w-[292px] h-[292px] mb-6" /> */}
+              {/* <img src={Rectangle} alt="Image" className="w-[292px] h-[292px] mb-6" /> */}
 
-                {/* <h2 className="text-[20px] lg:text-[24px] font-semibold mb-2">Your Contact Person</h2>
+              {/* <h2 className="text-[20px] lg:text-[24px] font-semibold mb-2">Your Contact Person</h2>
                 <p className="text-base">Full Name</p>
                 <p className="text-base">Designation</p> */}
 
-                <div className='my-10 mb-20'>
-                  <h2 className="text-[20px] lg:text-[24px] font-bold mb-2 text-blue ">Let’s Work Together</h2>
-                  <p>Join Our Team and Shape the Future</p>
-                </div>
-                <div className='absolute bottom-0 right-0'>
-                  <img src={img} alt="Image" />
-                </div>
+              <div className='my-10 mb-20'>
+                <h2 className="text-[20px] lg:text-[24px] font-bold mb-2 text-blue ">Let’s Work Together</h2>
+                <p>Join Our Team and Shape the Future</p>
+              </div>
+              <div className='absolute bottom-0 right-0'>
+                <img src={img} alt="Image" />
+              </div>
             </div>
           </div>
 
@@ -247,7 +247,7 @@ const JobApplication = () => {
                   onChange={inputHandler}
                   value={data.phoneNumber}
                 />
-                 <p className="text-red-600 text-sm h-2">{errors && errors.phoneNumber}</p>
+                <p className="text-red-600 text-sm h-2">{errors && errors.phoneNumber}</p>
               </div>
 
               <div htmlFor="resume" className="block text-sm font-semibold text-dblack">
@@ -275,7 +275,7 @@ const JobApplication = () => {
 
               <div className="w-full mb-10">
                 <label htmlFor="linkedInUrl" className="block text-sm font-semibold text-dblack">
-                  Portfolio Link 
+                  Portfolio Link
                 </label>
                 <input
                   id="linkedInUrl"
@@ -286,7 +286,7 @@ const JobApplication = () => {
                   onChange={inputHandler}
                   value={data.linkedInUrl}
                 />
-                 <p className="text-red-600 text-sm h-2">{errors && errors.linkedInUrl}</p>
+                <p className="text-red-600 text-sm h-2">{errors && errors.linkedInUrl}</p>
               </div>
 
               <div className="w-full mb-10">
@@ -309,7 +309,7 @@ const JobApplication = () => {
                   <input
                     type="checkbox"
                     className="text-blue-500 border-gray-300 rounded mt-2 lg:w-8 h-5"
-                    onChange={(e)=>setData({ ...data, termsAndConditions: e.target.checked })}
+                    onChange={(e) => setData({ ...data, termsAndConditions: e.target.checked })}
                     checked={data.termsAndConditions}
                   />
                   <label htmlFor="agree" className="ml-2 text-[16px] text-gray-700">
@@ -322,18 +322,19 @@ const JobApplication = () => {
               <button
                 type="submit"
                 className="px-4 py-2 bg-blue-600 text-white rounded-lg bg-green hover:bg-dblack focus:outline-none"
+                disabled={loading}
               >
-                Submit Application
+                {loading ? 'Sending...' : 'Submit Application'}
               </button>
             </form>
           </div>
         </div>
       </section>
       <Modal
-          isOpen={open}
-          setIsOpen={setOpen}
-          title="Application Submitted!"
-          message="Your application has been successfully submitted! We'll review your information and contact you if there's a match. Thank you for applying."
+        isOpen={open}
+        setIsOpen={setOpen}
+        title="Application Submitted!"
+        message="Your application has been successfully submitted! We'll review your information and contact you if there's a match. Thank you for applying."
       />
     </>
   );
