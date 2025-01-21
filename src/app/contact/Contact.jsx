@@ -11,8 +11,11 @@ import SectionHeading from '../../components/heading/Heading';
 import  axios  from 'axios';
 import config from '../../config';
 import Modal from '../../components/Modal'
+import { useNavigate } from 'react-router-dom';
 
 const Contact = React.memo(() => {
+  const navigate = useNavigate();
+
   const [data, setData]=useState({
     fullName:'',
     phoneNumber:'',
@@ -21,7 +24,8 @@ const Contact = React.memo(() => {
     message:'',
     checkbox:false,
   });
-  const [open, setOpen] = useState(false);
+  
+  
   const [errors, setErrors]=useState(null);
   const [loading, setLoading]=useState(false);
   const validateForm = () => {
@@ -88,9 +92,10 @@ const Contact = React.memo(() => {
             withCredentials : true
           })
           .then((res)=>{
-              // console.log(res.data);
-              setOpen(true);
+              console.log(res.data);
+              //setOpen(true);
               if(res.data.status==="success"){
+                  
                   setData({
                     fullName:'',
                     phoneNumber:'',
@@ -100,6 +105,8 @@ const Contact = React.memo(() => {
                     checkbox:false,
                   });
                   setLoading(false);
+                  navigate('/thanks');
+                  
               }
           })
           .catch((err)=>{
@@ -301,12 +308,12 @@ const Contact = React.memo(() => {
           </div>
         </div>
       </section>
-      <Modal
+      {/* <Modal
           isOpen={open}
           setIsOpen={setOpen}
           title="Message Sent!"
           message="Thank you for reaching out! We've received your message and will get back to you as soon as possible."
-      />
+      /> */}
     </>
   );
 });

@@ -22,6 +22,7 @@ async function generateSitemap() {
     { url: '/terms-and-conditions', changefreq: 'monthly', priority: 0.7 },
     { url: '/privacy-policy', changefreq: 'monthly', priority: 0.7 },
     { url: '/industry-expertise', changefreq: 'monthly', priority: 0.7 },
+    { url: '/thanks', changefreq: 'monthly', priority: 0.7 },
   ];
 
   try {

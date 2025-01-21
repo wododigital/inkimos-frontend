@@ -21,6 +21,8 @@ import Home from './app/home/Home';
 import IndustryExperts from './app/industry-experts/IndustryExperts';
 import JobApplication from './app/join/JobApplication';
 import NotFound from './app/notfound/NotFound';
+// import ThankYouPage from './app/thanks/ThankYou';
+import Success from './app/Success';
 function App() {
  
 
@@ -44,6 +46,8 @@ return(<>
         <Route path="/industry-expertise" element={<IndustryExperts/>}/>
         <Route path="/job-application/:id" element={<JobApplication/>}/>
         <Route path="*" element={<NotFound/>}/>
+        <Route path='/thanks' element={<Success/>}/>
+        {/* <Route path="/thankyou" element={<ThankYouPage/>}/> */}
 
         </Routes>
       <Footer/> 
