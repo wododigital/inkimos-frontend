@@ -1,6 +1,13 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/Logo-01.png';
 function Success() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [])
   return (
     <div className="min-h-screen bg-[#1A1B2E] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
       {/* Logo */}

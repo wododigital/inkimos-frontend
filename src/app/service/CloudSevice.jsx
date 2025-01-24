@@ -84,7 +84,7 @@ const AiService = () => {
       </section>
 
       {/* Cards section with slight overlap and rounded top corners */}
-      <div className="relative z-[5] -mt-16 rounded-[50px] md:rounded overflow-hidden">
+      <div className="relative z-[5] -mt-16 rounded-[50px] md:rounded-t-[72px] overflow-hidden">
         <Cards cardData={cardData} />
       </div>
       <Partner />
