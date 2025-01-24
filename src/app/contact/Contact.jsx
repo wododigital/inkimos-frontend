@@ -20,6 +20,7 @@ const Contact = React.memo(() => {
     fullName:'',
     phoneNumber:'',
     email:'',
+    companyName:'',
     industry:'',
     message:'',
     checkbox:false,
@@ -47,6 +48,9 @@ const Contact = React.memo(() => {
               validationErrors.email = "Please enter a valid email address!";
           }
       }
+      if (!data.companyName) {
+        validationErrors.companyName="Company Name is required!";
+    }
 
       if (!data.industry) {
           validationErrors.industry="Industry is required!";
@@ -85,6 +89,7 @@ const Contact = React.memo(() => {
           formData.append('name', data.fullName);
           formData.append('phone', data.phoneNumber);
           formData.append('email', data.email);
+          formData.append('companyName', data.companyName);
           formData.append('industry', data.industry);
           formData.append('details', data.message);
 
@@ -100,6 +105,7 @@ const Contact = React.memo(() => {
                     fullName:'',
                     phoneNumber:'',
                     email:'',
+                    companyName:'',
                     industry:'',
                     message:'',
                     checkbox:false,
@@ -210,6 +216,19 @@ const Contact = React.memo(() => {
                     onChange={inputHandler}
                   />
                   <p className="text-green text-sm h-2">{errors && errors.email}</p>
+                </div>
+
+                <div className='py-3'>
+                  <input
+                    type="text"
+                    placeholder="Company Name"
+                    className="w-full border-b border-white py-2 bg-transparent text-white focus:outline-none placeholder:text-white"
+                    name="companyName"
+                    value={data.companyName}
+                    onChange={inputHandler}
+                  />
+                 <p className="text-green text-sm h-2">{errors && errors.companyName}</p>
+
                 </div>
 
                 <div className='py-3'>
